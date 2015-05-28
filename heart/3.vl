@@ -1,13 +1,11 @@
 //import components.scatter 1.0 as ScatterScene
 import "https://github.com/pavelvasev/vl_scatter" 1.0
 //import github.pavelvasev.viewlang1_components.scatter 1.0
-//import "http://cdn.rawgit.com/pavelvasev/qmlweb.components/master/QtQuick/Controls"
-//import "https://github.com/pavelvasev/qmlweb.components/tree/master/QtQuick/Controls"
 
 Scene {
   id: s
   
-  text: "selectedTetra="+ tetrascene.selectedTetra
+  text: "Сцена"
 
   //centerPoint: [-0.9849010122148609, -2.2283103232173183, 47.10249136613619] // [1.52, 1.11, 10.49]
   Text {
