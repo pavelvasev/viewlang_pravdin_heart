@@ -95,6 +95,7 @@ Scene {
     width: parent.width - x - 10 - parent.rightWidgets.width - 10
     height: sph
     x: parent.leftWidgets.right+15
+    xindex: 2
     
     id: sp
     
