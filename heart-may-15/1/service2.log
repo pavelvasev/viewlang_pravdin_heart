@@ -1,0 +1,1566 @@
+Logging started at Thu May 28 12:41:31 2015
+ * Program directory: D:\scheme2\scheme2\scheme2go\
+ * Current directory: D:\GitHub\pravdin_heart\heart-may-15\1/
+  3     Text block is reading 0 lines..
+  3     Text block readed 0 lines. Input state good?=1
+  3   load_data AFTER INTERP: D:\scheme2\scheme2\scheme2go\/init.juj
+  3   load_data: no * exist, calling one_file
+  3   load_data_one_file: loading file 'D:\scheme2\scheme2\scheme2go\/init.juj'.
+  3   
+  3   [L0]-> log I am root init juj! Loading libs..
+  3   I am root init juj! Loading libs..
+  3   
+  3   [L0]-> load libs/*/init.juj
+  3   load_data AFTER INTERP: libs/*/init.juj
+  6   load_data: Glob is looking for files in pattern: libs/*/init.juj and found 13 items
+  6   load_data_one_file: loading file 'libs\arrays\init.juj'.
+  6   
+  6   [L0]-> set subarray[input=any][columns=any] = env <<exec ./subcolumns.exe <- set columns = {get columns} <- set . = {get input binary}
+  6     SetupMetaMethods: installing link: searching if exist: subarray.params.columns
+  6     SetupMetaMethods: installing link subarray.params.columns --> &params.columns
+  6     SetupMetaMethods: installing link: done!
+  6     SetupMetaMethods: installing link: searching if exist: subarray.params.input
+  6     SetupMetaMethods: installing link subarray.params.input --> &params.input
+  6     SetupMetaMethods: installing link: done!
+  6   [R0]-> DONE 
+  6   
+  6   [L0]-> set getcolumns[input=any][columns=any] = env <<exec ./subcolumns.exe <- set columns = {get columns} <- set . = {get input binary}
+  6     SetupMetaMethods: installing link: searching if exist: getcolumns.params.columns
+  6     SetupMetaMethods: installing link getcolumns.params.columns --> &params.columns
+  6     SetupMetaMethods: installing link: done!
+  6     SetupMetaMethods: installing link: searching if exist: getcolumns.params.input
+  6     SetupMetaMethods: installing link getcolumns.params.input --> &params.input
+  6     SetupMetaMethods: installing link: done!
+  6   [R0]-> DONE 
+  7   
+  7   [L0]-> set getlines[input=any][nlines=any] = <<exec ./GetLines/getlines.exe <- {get nlines binary} <- {get input binary}
+  7     SetupMetaMethods: installing link: searching if exist: getlines.params.input
+  7     SetupMetaMethods: installing link getlines.params.input --> &params.input
+  7     SetupMetaMethods: installing link: done!
+  7     SetupMetaMethods: installing link: searching if exist: getlines.params.nlines
+  7     SetupMetaMethods: installing link getlines.params.nlines --> &params.nlines
+  7     SetupMetaMethods: installing link: done!
+  7   [R0]-> DONE 
+  7   
+  7   [L0]-> set makearray[h=any][w=any][val=any]  = env <<exec nodejs.cmd ./makematrix.js <- {get h} {get w} {get val}
+  7     SetupMetaMethods: installing link: searching if exist: makearray.params.h
+  7     SetupMetaMethods: installing link makearray.params.h --> &params.h
+  7     SetupMetaMethods: installing link: done!
+  7     SetupMetaMethods: installing link: searching if exist: makearray.params.val
+  7     SetupMetaMethods: installing link makearray.params.val --> &params.val
+  7     SetupMetaMethods: installing link: done!
+  7     SetupMetaMethods: installing link: searching if exist: makearray.params.w
+  7     SetupMetaMethods: installing link makearray.params.w --> &params.w
+  7     SetupMetaMethods: installing link: done!
+  7   [R0]-> DONE 
+  7   
+  7   [L0]-> load SkipLines\init.juj
+  7   load_data AFTER INTERP: SkipLines\init.juj
+  7   load_data: no * exist, calling one_file
+  7   load_data_one_file: loading file 'SkipLines\init.juj'.
+  7   
+  7   [L0]-> set skiplines[input=any][skip=any] = <<exec ./skiplines.exe <- {get skip} 100000000 <- {get input binary}
+  7     SetupMetaMethods: installing link: searching if exist: skiplines.params.input
+  7     SetupMetaMethods: installing link skiplines.params.input --> &params.input
+  7     SetupMetaMethods: installing link: done!
+  7     SetupMetaMethods: installing link: searching if exist: skiplines.params.skip
+  7     SetupMetaMethods: installing link skiplines.params.skip --> &params.skip
+  7     SetupMetaMethods: installing link: done!
+  7   [R0]-> DONE 
+  7   
+  7   [L0]-> set skiplines[input=any][skip=any][len=any] = <<exec ./skiplines.exe <- {get skip} {get len} <- {get input binary}
+  7     SetupMetaMethods: installing link: searching if exist: skiplines.params.len
+  7     SetupMetaMethods: installing link skiplines.params.len --> &params.len
+  7     SetupMetaMethods: installing link: done!
+  7   [R0]-> DONE 
+  7   stream_dialog[L0] : 0 sec.
+  7   load_data_one_file: file 'SkipLines\init.juj' loaded good.
+  7   
+  7   [L0]-> set relsum[input=any] = <<exec ./RelativeSum/relativesum.exe <- {get input binary}
+  8     SetupMetaMethods: installing link: searching if exist: relsum.params.input
+  8     SetupMetaMethods: installing link relsum.params.input --> &params.input
+  8     SetupMetaMethods: installing link: done!
+  8   [R0]-> DONE 
+  8   
+  8   [L0]-> set importarray[input=any][nlines=any][ncols=any] = <<exec ./ImportArray/importarray.exe {get nlines} {get ncols} <- {get input}
+  8     SetupMetaMethods: installing link: searching if exist: importarray.params.input
+  8     SetupMetaMethods: installing link importarray.params.input --> &params.input
+  8     SetupMetaMethods: installing link: done!
+  8     SetupMetaMethods: installing link: searching if exist: importarray.params.ncols
+  8     SetupMetaMethods: installing link importarray.params.ncols --> &params.ncols
+  8     SetupMetaMethods: installing link: done!
+  8     SetupMetaMethods: installing link: searching if exist: importarray.params.nlines
+  8     SetupMetaMethods: installing link importarray.params.nlines --> &params.nlines
+  8     SetupMetaMethods: installing link: done!
+  8   [R0]-> DONE 
+  8   
+  8   [L0]-> set columnvalues[input=any][column=any] = <<exec ./GetValuesOfColumn/getvalscolumn.exe <- column {get column} <- {get input binary}
+  8     SetupMetaMethods: installing link: searching if exist: columnvalues.params.column
+  8     SetupMetaMethods: installing link columnvalues.params.column --> &params.column
+  8     SetupMetaMethods: installing link: done!
+  8     SetupMetaMethods: installing link: searching if exist: columnvalues.params.input
+  8     SetupMetaMethods: installing link columnvalues.params.input --> &params.input
+  8     SetupMetaMethods: installing link: done!
+  8   [R0]-> DONE 
+  8   
+  8   [L0]-> load FindLines\init.juj
+  8   load_data AFTER INTERP: FindLines\init.juj
+  8   load_data: no * exist, calling one_file
+  8   load_data_one_file: loading file 'FindLines\init.juj'.
+  8   
+  8   [L0]-> set findlines0[input=any][value=any] = <<exec ./findlines.exe <- {get value} <- {get input binary}
+  8     SetupMetaMethods: installing link: searching if exist: findlines0.params.input
+  8     SetupMetaMethods: installing link findlines0.params.input --> &params.input
+  8     SetupMetaMethods: installing link: done!
+  8     SetupMetaMethods: installing link: searching if exist: findlines0.params.value
+  8     SetupMetaMethods: installing link findlines0.params.value --> &params.value
+  8     SetupMetaMethods: installing link: done!
+  8   [R0]-> DONE 
+  8   
+  8   [L0]-> set findlines[input=any][column=any][value=any] = &input.getcolumns[columns={get column}].findlines0[value=any]
+  8     SetupMetaMethods: installing link: searching if exist: findlines.params.column
+  8     SetupMetaMethods: installing link findlines.params.column --> &params.column
+  8     SetupMetaMethods: installing link: done!
+  8     SetupMetaMethods: installing link: searching if exist: findlines.params.input
+  8     SetupMetaMethods: installing link findlines.params.input --> &params.input
+  8     SetupMetaMethods: installing link: done!
+  8     SetupMetaMethods: installing link: searching if exist: findlines.params.value
+  8     SetupMetaMethods: installing link findlines.params.value --> &params.value
+  8     SetupMetaMethods: installing link: done!
+  8   [R0]-> DONE 
+  8   
+  8   [L0]-> set filterlines[input=any][column=any][value=any] = <<exec ./../FilterLinesFast/filterlinesfast.exe <- col {get column} val {get value} <- {get input binary}
+  9     SetupMetaMethods: installing link: searching if exist: filterlines.params.column
+  9     SetupMetaMethods: installing link filterlines.params.column --> &params.column
+  9     SetupMetaMethods: installing link: done!
+  9     SetupMetaMethods: installing link: searching if exist: filterlines.params.input
+  9     SetupMetaMethods: installing link filterlines.params.input --> &params.input
+  9     SetupMetaMethods: installing link: done!
+  9     SetupMetaMethods: installing link: searching if exist: filterlines.params.value
+  9     SetupMetaMethods: installing link filterlines.params.value --> &params.value
+  9     SetupMetaMethods: installing link: done!
+  9   [R0]-> DONE 
+  8   stream_dialog[L0] : 0.001 sec.
+  9   load_data_one_file: file 'FindLines\init.juj' loaded good.
+  6   stream_dialog[L0] : 0.003 sec.
+  9   load_data_one_file: file 'libs\arrays\init.juj' loaded good.
+  9   load_data_one_file: loading file 'libs\collada\init.juj'.
+  9   
+  9   [L0]-> set collada = <<exec nodejs.cmd ./make_collada.js <- {get names scene.*} @@ nocache
+  9   [R0]-> DONE 
+  9   stream_dialog[L0] : 0 sec.
+  9   load_data_one_file: file 'libs\collada\init.juj' loaded good.
+  9   load_data_one_file: loading file 'libs\internal_funcs\init.juj'.
+  9   
+  9   [L0]-> set fn = suffix
+  9     
+  9     [L1]-> set PARENT = env <<exec nodejs.cmd ./func_eval.js <- {get SELF} <<- {get SELF.arg1 binary || noarg1} <<- {get SELF.arg2 binary || noarg2}
+  9     [R1]-> DONE 
+  9     
+  9     [L1]-> end
+  9     stream_dialog[L1] : 0 sec.
+  9     SuffixLayer: Generating new variables for suffix.
+  9     SuffixLayer: Getting original value of suffix template variable fn.PARENT via getorig
+  9   [R0]-> DONE 
+  9   stream_dialog[L0] : 0 sec.
+  9   load_data_one_file: file 'libs\internal_funcs\init.juj' loaded good.
+  9   load_data_one_file: loading file 'libs\js\init.juj'.
+ 10   
+ 10   [L0]-> set node[script=any][in1=any]          = <<exec nodejs_loop.cmd <<- {get script} <<- {get in1 binary}
+ 10     SetupMetaMethods: installing link: searching if exist: node.params.in1
+ 10     SetupMetaMethods: installing link node.params.in1 --> &params.in1
+ 10     SetupMetaMethods: installing link: done!
+ 10     SetupMetaMethods: installing link: searching if exist: node.params.script
+ 10     SetupMetaMethods: installing link node.params.script --> &params.script
+ 10     SetupMetaMethods: installing link: done!
+ 10   [R0]-> DONE 
+ 10   
+ 10   [L0]-> set node[script=any][in1=any][in2=any] = <<exec nodejs_loop.cmd <<- {get script} <<- {get in1 binary} <<- {get in2 binary}
+ 10     SetupMetaMethods: installing link: searching if exist: node.params.in2
+ 10     SetupMetaMethods: installing link node.params.in2 --> &params.in2
+ 10     SetupMetaMethods: installing link: done!
+ 10   [R0]-> DONE 
+ 10   
+ 10   [L0]-> set node[prefix=any][script=any][in1=any]          = {get prefix} <<exec nodejs_loop.cmd <<- {get script} <<- {get in1 binary}
+ 10     SetupMetaMethods: installing link: searching if exist: node.params.prefix
+ 10     SetupMetaMethods: installing link node.params.prefix --> &params.prefix
+ 10     SetupMetaMethods: installing link: done!
+ 10   [R0]-> DONE 
+ 10   
+ 10   [L0]-> set node[prefix=any][script=any][in1=any][in2=any] = {get prefix} <<exec nodejs_loop.cmd <<- {get script} <<- {get in1 binary} <<- {get in2 binary}
+ 10   [R0]-> DONE 
+ 10   
+ 10   [L0]-> set node[prefix=any][script=any][in1=any][space=any]          = {get prefix} <<exec nodejs_loop.cmd {get space} <<- {get script} <<- {get in1 binary}
+ 10     SetupMetaMethods: installing link: searching if exist: node.params.space
+ 10     SetupMetaMethods: installing link node.params.space --> &params.space
+ 10     SetupMetaMethods: installing link: done!
+ 10   [R0]-> DONE 
+ 10   
+ 10   [L0]-> set node[prefix=any][script=any][in1=any][in2=any][space=any] = {get prefix} <<exec nodejs_loop.cmd {get space} <<- {get script} <<- {get in1 binary} <<- {get in2 binary}
+ 11   [R0]-> DONE 
+ 10   stream_dialog[L0] : 0.001 sec.
+ 11   load_data_one_file: file 'libs\js\init.juj' loaded good.
+ 11   load_data_one_file: loading file 'libs\mathbox2\init.juj'.
+ 11   
+ 11   [L0]-> set mb_html[input=any] = blob * interpolate {{.}} <<file mb.html
+ 11     SetupMetaMethods: installing link: searching if exist: mb_html.params.input
+ 11     SetupMetaMethods: installing link mb_html.params.input --> &params.input
+ 11     SetupMetaMethods: installing link: done!
+ 11   [R0]-> DONE 
+ 11   
+ 11   [L0]-> set mb_spheres_datas = env <<exec nodejs.cmd ./mb_spheres_datas.js <- {get names scene.*.spheres}
+ 11   [R0]-> DONE 
+ 11   stream_dialog[L0] : 0 sec.
+ 11   load_data_one_file: file 'libs\mathbox2\init.juj' loaded good.
+ 11   load_data_one_file: loading file 'libs\mathbox\init.juj'.
+ 11   
+ 11   [L0]-> set json[input=any] = env <<exec nodejs.cmd ./to_json.js <- {get input binary}
+ 11     SetupMetaMethods: installing link: searching if exist: json.params.input
+ 11     SetupMetaMethods: installing link json.params.input --> &params.input
+ 11     SetupMetaMethods: installing link: done!
+ 11   [R0]-> DONE 
+ 11   
+ 11   [L0]-> set jsonflat[input=any] = env <<exec nodejs.cmd ./to_json_flat.js <- {get input binary}
+ 11     SetupMetaMethods: installing link: searching if exist: jsonflat.params.input
+ 11     SetupMetaMethods: installing link jsonflat.params.input --> &params.input
+ 11     SetupMetaMethods: installing link: done!
+ 12   [R0]-> DONE 
+ 12   
+ 12   [L0]-> set mathbox_html [input=any] = env <<exec nodejs.cmd ./hb.js <- {get input binary}
+ 12     SetupMetaMethods: installing link: searching if exist: mathbox_html.params.input
+ 12     SetupMetaMethods: installing link mathbox_html.params.input --> &params.input
+ 12     SetupMetaMethods: installing link: done!
+ 12   [R0]-> DONE 
+ 12   
+ 12   [L0]-> set scene.mathbox_html = env <<exec nodejs.cmd ./hb3.js
+ 12   [R0]-> DONE 
+ 11   stream_dialog[L0] : 0.001 sec.
+ 12   load_data_one_file: file 'libs\mathbox\init.juj' loaded good.
+ 12   load_data_one_file: loading file 'libs\other\init.juj'.
+ 12   
+ 12   [L0]-> echo I am other juj!
+ 12   stream_dialog[L0] : 0 sec.
+ 12   load_data_one_file: file 'libs\other\init.juj' loaded good.
+ 12   load_data_one_file: loading file 'libs\scalar_values_palette\init.juj'.
+ 12   
+ 12   [L0]-> set paletter[input=any] = <<exec nodejs.cmd ./palette.js <- {get input binary}
+ 12     SetupMetaMethods: installing link: searching if exist: paletter.params.input
+ 12     SetupMetaMethods: installing link paletter.params.input --> &params.input
+ 12     SetupMetaMethods: installing link: done!
+ 12   [R0]-> DONE 
+ 12   
+ 12   [L0]-> set points = suffix
+ 12     
+ 12     [L1]-> set colors = &SELF.scalar_values.paletter
+ 12     [R1]-> DONE 
+ 12     
+ 12     [L1]-> end
+ 12     stream_dialog[L1] : 0 sec.
+ 12     SuffixLayer: Generating new variables for suffix.
+ 12     SuffixLayer: Getting original value of suffix template variable points.colors via getorig
+ 12   [R0]-> DONE 
+ 12   
+ 12   [L0]-> set spheres = suffix
+ 13     
+ 12     [L1]-> set colors = &SELF.scalar_values.paletter
+ 13     [R1]-> DONE 
+ 13     
+ 13     [L1]-> end
+ 12     stream_dialog[L1] : 0.001 sec.
+ 13     SuffixLayer: Generating new variables for suffix.
+ 13     SuffixLayer: Getting original value of suffix template variable spheres.colors via getorig
+ 13   [R0]-> DONE 
+ 13   
+ 13   [L0]-> set trimesh = suffix
+ 13     
+ 13     [L1]-> set colors = &SELF.scalar_values.paletter
+ 13     [R1]-> DONE 
+ 13     
+ 13     [L1]-> end
+ 13     stream_dialog[L1] : 0 sec.
+ 13     SuffixLayer: Generating new variables for suffix.
+ 13     SuffixLayer: Getting original value of suffix template variable trimesh.colors via getorig
+ 13   [R0]-> DONE 
+ 12   stream_dialog[L0] : 0.001 sec.
+ 13   load_data_one_file: file 'libs\scalar_values_palette\init.juj' loaded good.
+ 13   load_data_one_file: loading file 'libs\suffixes\init.juj'.
+ 13   
+ 13   [L0]-> load trimesher/init.juj
+ 13   load_data AFTER INTERP: trimesher/init.juj
+ 13   load_data: no * exist, calling one_file
+ 13   load_data_one_file: loading file 'trimesher/init.juj'.
+ 13   
+ 13   [L0]-> set arrows = suffix
+ 13     
+ 13     [L1]-> set cmd~ = env <<exec ./trimesher.exe <- arrows {get SELF.radius || 0} <- {get SELF binary}
+ 13     [R1]-> DONE 
+ 13     
+ 13     [L1]-> set trimesh = &SELF.cmd~.trimesh
+ 13       SuffixLayer. We have suffix 'trimesh'. Processing it.
+ 13       SuffixLayer. We are atop another suffix, stopping process. Another suffix is arrows.
+ 13     [R1]-> DONE 
+ 13     
+ 13     [L1]-> set trimesh.nodes = &SELF.cmd~.trimesh.nodes
+ 13     [R1]-> DONE 
+ 13     
+ 13     [L1]-> end
+ 13     stream_dialog[L1] : 0 sec.
+ 13     SuffixLayer: Generating new variables for suffix.
+ 13     SuffixLayer: Getting original value of suffix template variable arrows.cmd~ via getorig
+ 13     SuffixLayer: Getting original value of suffix template variable arrows.trimesh via getorig
+ 13     SuffixLayer: Getting original value of suffix template variable arrows.trimesh.nodes via getorig
+ 13   [R0]-> DONE 
+ 13   
+ 13   [L0]-> set lines = suffix
+ 13     
+ 13     [L1]-> set cmd~ = env <<exec ./trimesher.exe <- lines {get SELF.radius || 0.005} {get SELF.nx || 4} <- {get SELF binary}
+ 13     [R1]-> DONE 
+ 13     
+ 13     [L1]-> set trimesh = &SELF.cmd~.trimesh
+ 13       SuffixLayer. We have suffix 'trimesh'. Processing it.
+ 13       SuffixLayer. We are atop another suffix, stopping process. Another suffix is lines.
+ 13     [R1]-> DONE 
+ 13     
+ 13     [L1]-> set trimesh.nodes = &SELF.cmd~.trimesh.nodes
+ 13     [R1]-> DONE 
+ 13     
+ 13     [L1]-> end
+ 13     stream_dialog[L1] : 0 sec.
+ 14     SuffixLayer: Generating new variables for suffix.
+ 14     SuffixLayer: Getting original value of suffix template variable lines.cmd~ via getorig
+ 14     SuffixLayer: Getting original value of suffix template variable lines.trimesh via getorig
+ 14     SuffixLayer: Getting original value of suffix template variable lines.trimesh.nodes via getorig
+ 14   [R0]-> DONE 
+ 14   
+ 14   [L0]-> set spheres = suffix
+ 14     
+ 14     [L1]-> set cmd~ = env <<exec ./trimesher.exe <- spheres {get SELF.radius || 0.1} {get SELF.nx || 24} {get SELF.ny || 16}<- {get SELF binary}
+ 14     [R1]-> DONE 
+ 14     
+ 14     [L1]-> set trimesh = &SELF.cmd~.trimesh
+ 14       SuffixLayer. We have suffix 'trimesh'. Processing it.
+ 14       SuffixLayer. We are atop another suffix, stopping process. Another suffix is spheres.
+ 14     [R1]-> DONE 
+ 14     
+ 14     [L1]-> set trimesh.nodes = &SELF.cmd~.trimesh.nodes
+ 14     [R1]-> DONE 
+ 14     
+ 14     [L1]-> end
+ 14     stream_dialog[L1] : 0 sec.
+ 14     SuffixLayer: Generating new variables for suffix.
+ 14     SuffixLayer: Getting original value of suffix template variable spheres.cmd~ via getorig
+ 14     SuffixLayer: Getting original value of suffix template variable spheres.colors via getorig
+ 14     SuffixLayer: Getting original value of suffix template variable spheres.trimesh via getorig
+ 14     SuffixLayer: Getting original value of suffix template variable spheres.trimesh.nodes via getorig
+ 14   [R0]-> DONE 
+ 14   
+ 14   [L0]-> set boxes = suffix
+ 14     
+ 14     [L1]-> set cmd~ = env <<exec ./trimesher.exe <- boxes <- {get SELF binary}
+ 14     [R1]-> DONE 
+ 14     
+ 14     [L1]-> set trimesh = &SELF.cmd~.trimesh
+ 14       SuffixLayer. We have suffix 'trimesh'. Processing it.
+ 14       SuffixLayer. We are atop another suffix, stopping process. Another suffix is boxes.
+ 14     [R1]-> DONE 
+ 14     
+ 14     [L1]-> set trimesh.nodes = &SELF.cmd~.trimesh.nodes
+ 14     [R1]-> DONE 
+ 14     
+ 14     [L1]-> end
+ 14     stream_dialog[L1] : 0 sec.
+ 14     SuffixLayer: Generating new variables for suffix.
+ 14     SuffixLayer: Getting original value of suffix template variable boxes.cmd~ via getorig
+ 14     SuffixLayer: Getting original value of suffix template variable boxes.trimesh via getorig
+ 14     SuffixLayer: Getting original value of suffix template variable boxes.trimesh.nodes via getorig
+ 14   [R0]-> DONE 
+ 14   
+ 14   [L0]-> set cubes = suffix
+ 14     
+ 14     [L1]-> set cmd~ = env <<exec ./trimesher.exe <- cubes {get SELF?radius || 0.25} <- {get SELF binary}
+ 14     [R1]-> DONE 
+ 14     
+ 14     [L1]-> set trimesh = &SELF.cmd~.trimesh
+ 14       SuffixLayer. We have suffix 'trimesh'. Processing it.
+ 14       SuffixLayer. We are atop another suffix, stopping process. Another suffix is cubes.
+ 14     [R1]-> DONE 
+ 14     
+ 14     [L1]-> set trimesh.nodes = &SELF.cmd~.trimesh.nodes
+ 14     [R1]-> DONE 
+ 14     
+ 14     [L1]-> end
+ 14     stream_dialog[L1] : 0 sec.
+ 14     SuffixLayer: Generating new variables for suffix.
+ 14     SuffixLayer: Getting original value of suffix template variable cubes.cmd~ via getorig
+ 14     SuffixLayer: Getting original value of suffix template variable cubes.trimesh via getorig
+ 14     SuffixLayer: Getting original value of suffix template variable cubes.trimesh.nodes via getorig
+ 14   [R0]-> DONE 
+ 14   
+ 14   [L0]-> set triangles = suffix
+ 14     
+ 14     [L1]-> set cmd~ = env <<exec ./trimesher.exe <- triangles {get SELF?radius || 0} <- {get SELF binary}
+ 14     [R1]-> DONE 
+ 14     
+ 14     [L1]-> set trimesh = &SELF.cmd~.trimesh
+ 14       SuffixLayer. We have suffix 'trimesh'. Processing it.
+ 14       SuffixLayer. We are atop another suffix, stopping process. Another suffix is triangles.
+ 14     [R1]-> DONE 
+ 14     
+ 14     [L1]-> set trimesh.nodes = &SELF.cmd~.trimesh.nodes
+ 15     [R1]-> DONE 
+ 15     
+ 15     [L1]-> end
+ 14     stream_dialog[L1] : 0.001 sec.
+ 15     SuffixLayer: Generating new variables for suffix.
+ 15     SuffixLayer: Getting original value of suffix template variable triangles.cmd~ via getorig
+ 15     SuffixLayer: Getting original value of suffix template variable triangles.trimesh via getorig
+ 15     SuffixLayer: Getting original value of suffix template variable triangles.trimesh.nodes via getorig
+ 15   [R0]-> DONE 
+ 15   
+ 15   [L0]-> set rectangles = suffix
+ 15     
+ 15     [L1]-> set cmd~ = env <<exec ./trimesher.exe <- rectangles {get SELF?radius || 0} <- {get SELF binary}
+ 15     [R1]-> DONE 
+ 15     
+ 15     [L1]-> set trimesh = &SELF.cmd~.trimesh
+ 15       SuffixLayer. We have suffix 'trimesh'. Processing it.
+ 15       SuffixLayer. We are atop another suffix, stopping process. Another suffix is rectangles.
+ 15     [R1]-> DONE 
+ 15     
+ 15     [L1]-> set trimesh.nodes = &SELF.cmd~.trimesh.nodes
+ 15     [R1]-> DONE 
+ 15     
+ 15     [L1]-> end
+ 15     stream_dialog[L1] : 0 sec.
+ 15     SuffixLayer: Generating new variables for suffix.
+ 15     SuffixLayer: Getting original value of suffix template variable rectangles.cmd~ via getorig
+ 15     SuffixLayer: Getting original value of suffix template variable rectangles.trimesh via getorig
+ 15     SuffixLayer: Getting original value of suffix template variable rectangles.trimesh.nodes via getorig
+ 15   [R0]-> DONE 
+ 15   
+ 15   [L0]-> set polylines = suffix
+ 15     
+ 15     [L1]-> set cmd~ = env <<exec nodejs.cmd ./suffix_polylines.js <- {get SELF.every || 2} <- {get SELF.closed || 0} <- {get SELF binary}
+ 15     [R1]-> DONE 
+ 15     
+ 15     [L1]-> set lines=&SELF.cmd~.lines
+ 15       SuffixLayer. We have suffix 'lines'. Processing it.
+ 15       SuffixLayer. We are atop another suffix, stopping process. Another suffix is polylines.
+ 15     [R1]-> DONE 
+ 15     
+ 15     [L1]-> end
+ 15     stream_dialog[L1] : 0 sec.
+ 15     SuffixLayer: Generating new variables for suffix.
+ 15     SuffixLayer: Getting original value of suffix template variable polylines.cmd~ via getorig
+ 15     SuffixLayer: Getting original value of suffix template variable polylines.lines via getorig
+ 15   [R0]-> DONE 
+ 13   stream_dialog[L0] : 0.002 sec.
+ 15   load_data_one_file: file 'trimesher/init.juj' loaded good.
+ 15   
+ 15   [L0]-> set linestrip = suffix
+ 15     
+ 15     [L1]-> set cmd~ = env <<exec nodejs.cmd ./suffix_linestrip_v20.js <- {get SELF binary}
+ 15     [R1]-> DONE 
+ 15     
+ 15     [L1]-> set lines=&SELF.cmd~.lines
+ 15       SuffixLayer. We have suffix 'lines'. Processing it.
+ 15       SuffixLayer. We are atop another suffix, stopping process. Another suffix is linestrip.
+ 15     [R1]-> DONE 
+ 15     
+ 15     [L1]-> end
+ 15     stream_dialog[L1] : 0 sec.
+ 15     SuffixLayer: Generating new variables for suffix.
+ 15     SuffixLayer: Getting original value of suffix template variable linestrip.cmd~ via getorig
+ 15     SuffixLayer: Getting original value of suffix template variable linestrip.lines via getorig
+ 15   [R0]-> DONE 
+ 15   
+ 15   [L0]-> set latticer_cmd[input=any] = env <<exec ./latticer.exe <- {get input binary}
+ 15     SetupMetaMethods: installing link: searching if exist: latticer_cmd.params.input
+ 15     SetupMetaMethods: installing link latticer_cmd.params.input --> &params.input
+ 15     SetupMetaMethods: installing link: done!
+ 15   [R0]-> DONE 
+ 15   
+ 15   [L0]-> set lattice = suffix
+ 15     
+ 15     [L1]-> set cmd~ = &latticer_cmd[input=&SELF]
+ 15     [R1]-> DONE 
+ 16     
+ 16     [L1]-> set trimesh = &SELF.cmd~.trimesh
+ 16       SuffixLayer. We have suffix 'trimesh'. Processing it.
+ 16       SuffixLayer. We are atop another suffix, stopping process. Another suffix is lattice.
+ 16     [R1]-> DONE 
+ 16     
+ 16     [L1]-> set trimesh.nodes.scalar_values = &SELF.scalar_values
+ 16     [R1]-> DONE 
+ 16     
+ 16     [L1]-> set trimesh.scalar_values = &SELF.scalar_values
+ 16     [R1]-> DONE 
+ 16     
+ 16     [L1]-> end
+ 15     stream_dialog[L1] : 0.001 sec.
+ 16     SuffixLayer: Generating new variables for suffix.
+ 16     SuffixLayer: Getting original value of suffix template variable lattice.cmd~ via getorig
+ 16     SuffixLayer: Getting original value of suffix template variable lattice.trimesh via getorig
+ 16     SuffixLayer: Getting original value of suffix template variable lattice.trimesh.nodes.scalar_values via getorig
+ 16     SuffixLayer: Getting original value of suffix template variable lattice.trimesh.scalar_values via getorig
+ 16   [R0]-> DONE 
+ 16   
+ 16   [L0]-> set tetramesh = suffix
+ 16     
+ 16     [L1]-> set trimesh = <<exec ./tetramesh/tetramesh.exe <- {get SELF}
+ 16       SuffixLayer. We have suffix 'trimesh'. Processing it.
+ 16       SuffixLayer. We are atop another suffix, stopping process. Another suffix is tetramesh.
+ 16     [R1]-> DONE 
+ 16     
+ 16     [L1]-> set trimesh.nodes = &SELF.nodes
+ 16     [R1]-> DONE 
+ 16     
+ 16     [L1]-> end
+ 16     stream_dialog[L1] : 0 sec.
+ 16     SuffixLayer: Generating new variables for suffix.
+ 16     SuffixLayer: Getting original value of suffix template variable tetramesh.trimesh via getorig
+ 16     SuffixLayer: Getting original value of suffix template variable tetramesh.trimesh.nodes via getorig
+ 16   [R0]-> DONE 
+ 13   stream_dialog[L0] : 0.003 sec.
+ 16   load_data_one_file: file 'libs\suffixes\init.juj' loaded good.
+ 16   load_data_one_file: loading file 'libs\triangle\init.juj'.
+ 16   
+ 16   [L0]-> load js/init.juj
+ 16   load_data AFTER INTERP: js/init.juj
+ 16   load_data: no * exist, calling one_file
+ 16   load_data_one_file: loading file 'js/init.juj'.
+ 16   
+ 16   [L0]-> set triangulate.params.quality = 5
+ 16   [R0]-> DONE 
+ 16   
+ 16   [L0]-> set triangulate.params.quality.values = &range[min=1][max=100][step=1]
+ 16   [R0]-> DONE 
+ 16   
+ 16   [L0]-> set triangulate[input=any][quality=any] = env <<exec nodejs.cmd ./triangle.js {get quality} <- {get input binary}
+ 16     SetupMetaMethods: installing link: searching if exist: triangulate.params.input
+ 16     SetupMetaMethods: installing link triangulate.params.input --> &params.input
+ 16     SetupMetaMethods: installing link: done!
+ 16     SetupMetaMethods: installing link: searching if exist: triangulate.params.quality
+ 16     SetupMetaMethods: installing link: done!
+ 16   [R0]-> DONE 
+ 16   
+ 16   [L0]-> set sample_tri_data[n=any][radius=any][height=any] = env <<exec nodejs_plain.cmd ./tri_task_m5.js <- {get n || 1000} <- {get radius || 1000} <- {get height || 25}
+ 17     SetupMetaMethods: installing link: searching if exist: sample_tri_data.params.height
+ 17     SetupMetaMethods: installing link sample_tri_data.params.height --> &params.height
+ 17     SetupMetaMethods: installing link: done!
+ 17     SetupMetaMethods: installing link: searching if exist: sample_tri_data.params.n
+ 17     SetupMetaMethods: installing link sample_tri_data.params.n --> &params.n
+ 17     SetupMetaMethods: installing link: done!
+ 17     SetupMetaMethods: installing link: searching if exist: sample_tri_data.params.radius
+ 17     SetupMetaMethods: installing link sample_tri_data.params.radius --> &params.radius
+ 17     SetupMetaMethods: installing link: done!
+ 17   [R0]-> DONE 
+ 16   stream_dialog[L0] : 0.001 sec.
+ 17   load_data_one_file: file 'js/init.juj' loaded good.
+ 16   stream_dialog[L0] : 0.001 sec.
+ 17   load_data_one_file: file 'libs\triangle\init.juj' loaded good.
+ 17   load_data_one_file: loading file 'libs\utils\init.juj'.
+ 17   
+ 17   [L0]-> set gethead[input=any] = blob * <<exec ./curl -L --head {get input}
+ 17     SetupMetaMethods: installing link: searching if exist: gethead.params.input
+ 17     SetupMetaMethods: installing link gethead.params.input --> &params.input
+ 17     SetupMetaMethods: installing link: done!
+ 17   [R0]-> DONE 
+ 17   
+ 17   [L0]-> set getlastmod[input=any] = <<exec find "Last-Modified" <- {get gethead}
+ 17     SetupMetaMethods: installing link: searching if exist: getlastmod.params.input
+ 17     SetupMetaMethods: installing link getlastmod.params.input --> &params.input
+ 17     SetupMetaMethods: installing link: done!
+ 17   [R0]-> DONE 
+ 17   
+ 17   [L0]-> set string2hash[input=any] = &eval[cmd=var crypto=require('crypto'); var shasum = crypto.createHash('sha1'); shasum.update( '{get input}' ); shasum.digest('hex');]
+ 17     SetupMetaMethods: installing link: searching if exist: string2hash.params.input
+ 17     SetupMetaMethods: installing link string2hash.params.input --> &params.input
+ 17     SetupMetaMethods: installing link: done!
+ 17   [R0]-> DONE 
+ 17   
+ 17   [L0]-> set download[input=any][prefix=any] = {get prefix} <<exec cacher.cmd "--key={get getlastmod}{get string2hash}" ./curl -L {get input}
+ 17     SetupMetaMethods: installing link: searching if exist: download.params.input
+ 17     SetupMetaMethods: installing link download.params.input --> &params.input
+ 17     SetupMetaMethods: installing link: done!
+ 17     SetupMetaMethods: installing link: searching if exist: download.params.prefix
+ 17     SetupMetaMethods: installing link download.params.prefix --> &params.prefix
+ 17     SetupMetaMethods: installing link: done!
+ 18   [R0]-> DONE 
+ 18   
+ 18   [L0]-> set unpack_file[input=any][prefix=any] = {get prefix} <<exec ./7za e -so {get input}
+ 18     SetupMetaMethods: installing link: searching if exist: unpack_file.params.input
+ 18     SetupMetaMethods: installing link unpack_file.params.input --> &params.input
+ 18     SetupMetaMethods: installing link: done!
+ 18     SetupMetaMethods: installing link: searching if exist: unpack_file.params.prefix
+ 18     SetupMetaMethods: installing link unpack_file.params.prefix --> &params.prefix
+ 18     SetupMetaMethods: installing link: done!
+ 18   [R0]-> DONE 
+ 18   
+ 18   [L0]-> set unpack_stream_gz[input=any][uprefix=any] = {get uprefix} <<exec ./7za e -so -si -tgzip <- {get input}
+ 18     SetupMetaMethods: installing link: searching if exist: unpack_stream_gz.params.input
+ 18     SetupMetaMethods: installing link unpack_stream_gz.params.input --> &params.input
+ 18     SetupMetaMethods: installing link: done!
+ 18     SetupMetaMethods: installing link: searching if exist: unpack_stream_gz.params.uprefix
+ 18     SetupMetaMethods: installing link unpack_stream_gz.params.uprefix --> &params.uprefix
+ 18     SetupMetaMethods: installing link: done!
+ 18   [R0]-> DONE 
+ 18   
+ 18   [L0]-> set range[min=any][max=any][step=any]  = <<exec nodejs.cmd ./range.js <- {get min} {get max} {get step}
+ 18     SetupMetaMethods: installing link: searching if exist: range.params.max
+ 18     SetupMetaMethods: installing link range.params.max --> &params.max
+ 18     SetupMetaMethods: installing link: done!
+ 18     SetupMetaMethods: installing link: searching if exist: range.params.min
+ 18     SetupMetaMethods: installing link range.params.min --> &params.min
+ 18     SetupMetaMethods: installing link: done!
+ 18     SetupMetaMethods: installing link: searching if exist: range.params.step
+ 18     SetupMetaMethods: installing link range.params.step --> &params.step
+ 18     SetupMetaMethods: installing link: done!
+ 18   [R0]-> DONE 
+ 18   
+ 18   [L0]-> set range2[min=any][max=any][step=any]  = <<exec nodejs.cmd ./range2.js <- {get min} {get max} {get step}
+ 18     SetupMetaMethods: installing link: searching if exist: range2.params.max
+ 18     SetupMetaMethods: installing link range2.params.max --> &params.max
+ 18     SetupMetaMethods: installing link: done!
+ 18     SetupMetaMethods: installing link: searching if exist: range2.params.min
+ 18     SetupMetaMethods: installing link range2.params.min --> &params.min
+ 18     SetupMetaMethods: installing link: done!
+ 18     SetupMetaMethods: installing link: searching if exist: range2.params.step
+ 18     SetupMetaMethods: installing link range2.params.step --> &params.step
+ 18     SetupMetaMethods: installing link: done!
+ 18   [R0]-> DONE 
+ 18   
+ 18   [L0]-> load string2blob\init.juj
+ 18   load_data AFTER INTERP: string2blob\init.juj
+ 18   load_data: no * exist, calling one_file
+ 18   load_data_one_file: loading file 'string2blob\init.juj'.
+ 18   
+ 18   [L0]-> set string2blob[input=any]  = env <<exec nodejs_loop.cmd <<- ./string2blob.js <<- {get input}
+ 18     SetupMetaMethods: installing link: searching if exist: string2blob.params.input
+ 18     SetupMetaMethods: installing link string2blob.params.input --> &params.input
+ 19     SetupMetaMethods: installing link: done!
+ 19   [R0]-> DONE 
+ 18   stream_dialog[L0] : 0.001 sec.
+ 19   load_data_one_file: file 'string2blob\init.juj' loaded good.
+ 19   
+ 19   [L0]-> set eval[cmd=any]  = <<exec nodejs_loop.cmd -eval1 <<- ./eval.js <<- {get cmd} @@ nocache
+ 19     SetupMetaMethods: installing link: searching if exist: eval.params.cmd
+ 19     SetupMetaMethods: installing link eval.params.cmd --> &params.cmd
+ 19     SetupMetaMethods: installing link: done!
+ 19   [R0]-> DONE 
+ 19   
+ 19   [L0]-> set eval2[cmd=any][input=any]  = <<exec nodejs_loop.cmd -eval2 <<- ./eval_cmd_on_input.js <<- {get cmd} <<- {get input binary float} @@ nocache
+ 19     SetupMetaMethods: installing link: searching if exist: eval2.params.cmd
+ 19     SetupMetaMethods: installing link eval2.params.cmd --> &params.cmd
+ 19     SetupMetaMethods: installing link: done!
+ 19     SetupMetaMethods: installing link: searching if exist: eval2.params.input
+ 19     SetupMetaMethods: installing link eval2.params.input --> &params.input
+ 19     SetupMetaMethods: installing link: done!
+ 19   [R0]-> DONE 
+ 19   
+ 19   [L0]-> set eval3[cmd=any][input=any]  = <<exec nodejs_loop.cmd -eval3 <<- ./eval_cmd_on_input.js <<- {get cmd} <<- {get input binary float skip_interpolation} @@ nocache
+ 19     SetupMetaMethods: installing link: searching if exist: eval3.params.cmd
+ 19     SetupMetaMethods: installing link eval3.params.cmd --> &params.cmd
+ 19     SetupMetaMethods: installing link: done!
+ 19     SetupMetaMethods: installing link: searching if exist: eval3.params.input
+ 19     SetupMetaMethods: installing link eval3.params.input --> &params.input
+ 19     SetupMetaMethods: installing link: done!
+ 19   [R0]-> DONE 
+ 19   
+ 19   [L0]-> set errors_a = text * lines <<exec find.exe "ERROR" {get log_path} @@ nocache @@ skiplines=1
+ 19   [R0]-> DONE 
+ 19   
+ 19   [L0]-> set errors_convert_code = text * lines
+ 19     Text block is reading -1 lines..
+ 19     Text block readed 3 lines. Input state good?=1
+ 19   [R0]-> DONE 
+ 19   
+ 19   [L0]-> set errors = &errors_list
+ 19   [R0]-> DONE 
+ 19   
+ 19   [L0]-> load getcolor\init.juj
+ 19   load_data AFTER INTERP: getcolor\init.juj
+ 19   load_data: no * exist, calling one_file
+ 19   load_data_one_file: loading file 'getcolor\init.juj'.
+ 19   
+ 19   [L0]-> set getcolor[color=any]  = <<exec nodejs.cmd ./getcolor.js <- {get color}
+ 19     SetupMetaMethods: installing link: searching if exist: getcolor.params.color
+ 20     SetupMetaMethods: installing link getcolor.params.color --> &params.color
+ 20     SetupMetaMethods: installing link: done!
+ 20   [R0]-> DONE 
+ 19   stream_dialog[L0] : 0.001 sec.
+ 20   load_data_one_file: file 'getcolor\init.juj' loaded good.
+ 17   stream_dialog[L0] : 0.003 sec.
+ 20   load_data_one_file: file 'libs\utils\init.juj' loaded good.
+ 20   load_data_one_file: loading file 'libs\viewlang\init.juj'.
+ 20   
+ 20   [L0]-> set viewlang[cmd_for_log=any] = <<exec nodejs.cmd ./make_x3dom.js <- {get names scene.*} @@ nocache @@ someother @@ timeout=5
+ 20     SetupMetaMethods: installing link: searching if exist: viewlang.params.cmd_for_log
+ 20     SetupMetaMethods: installing link viewlang.params.cmd_for_log --> &params.cmd_for_log
+ 20     SetupMetaMethods: installing link: done!
+ 20   [R0]-> DONE 
+ 20   stream_dialog[L0] : 0 sec.
+ 20   load_data_one_file: file 'libs\viewlang\init.juj' loaded good.
+ 20   load_data_one_file: loading file 'libs\x3dom\init.juj'.
+ 20   
+ 20   [L0]-> set bra = <<exec cmd /c start http://localhost:{get http_port}/v1?intermode=true^&cmd=get+x3dom5_html @@ nocache
+ 20   [R0]-> DONE 
+ 20   
+ 20   [L0]-> load v3nodejs/init.juj
+ 20   load_data AFTER INTERP: v3nodejs/init.juj
+ 20   load_data: no * exist, calling one_file
+ 20   load_data_one_file: loading file 'v3nodejs/init.juj'.
+ 20   
+ 20   [L0]-> set x3dom_html[cmd_for_log=any] = <<exec nodejs.cmd ./make_x3dom.js <- {get names scene.*} @@ nocache @@ someother @@ timeout=5
+ 20     SetupMetaMethods: installing link: searching if exist: x3dom_html.params.cmd_for_log
+ 20     SetupMetaMethods: installing link x3dom_html.params.cmd_for_log --> &params.cmd_for_log
+ 20     SetupMetaMethods: installing link: done!
+ 20   [R0]-> DONE 
+ 20   
+ 20   [L0]-> set part_x3dom_html[part=any][cmd_for_log=any] = <<exec nodejs_loop.cmd make_x3dom-part <<- ./make_x3dom.js <<- {get names {getorig part}*} @@ nocache @@ someother @@ timeout=5
+ 20     SetupMetaMethods: installing link: searching if exist: part_x3dom_html.params.cmd_for_log
+ 20     SetupMetaMethods: installing link part_x3dom_html.params.cmd_for_log --> &params.cmd_for_log
+ 21     SetupMetaMethods: installing link: done!
+ 21     SetupMetaMethods: installing link: searching if exist: part_x3dom_html.params.part
+ 21     SetupMetaMethods: installing link part_x3dom_html.params.part --> &params.part
+ 21     SetupMetaMethods: installing link: done!
+ 21   [R0]-> DONE 
+ 21   
+ 21   [L0]-> set x3dom_spheres_partial[input=any] = blob * interpolate {{.}} <<exec nodejs.cmd ./x3dom_spheres_partial.js <- {expand input} <- {get input binary} @@ nocache
+ 21     SetupMetaMethods: installing link: searching if exist: x3dom_spheres_partial.params.input
+ 21     SetupMetaMethods: installing link x3dom_spheres_partial.params.input --> &params.input
+ 21     SetupMetaMethods: installing link: done!
+ 21   [R0]-> DONE 
+ 21   
+ 21   [L0]-> set points = suffix
+ 21     
+ 21     [L1]-> set spheres = &SELF
+ 21       SuffixLayer. We have suffix 'spheres'. Processing it.
+ 21       SuffixLayer. We are atop another suffix, stopping process. Another suffix is points.
+ 21     [R1]-> DONE 
+ 21     
+ 21     [L1]-> end
+ 21     stream_dialog[L1] : 0 sec.
+ 21     SuffixLayer: Generating new variables for suffix.
+ 21     SuffixLayer: Getting original value of suffix template variable points.colors via getorig
+ 21     SuffixLayer: Getting original value of suffix template variable points.spheres via getorig
+ 21   [R0]-> DONE 
+ 20   stream_dialog[L0] : 0.001 sec.
+ 21   load_data_one_file: file 'v3nodejs/init.juj' loaded good.
+ 21   
+ 21   [L0]-> load v5nodejs/init.juj
+ 21   load_data AFTER INTERP: v5nodejs/init.juj
+ 21   load_data: no * exist, calling one_file
+ 21   load_data_one_file: loading file 'v5nodejs/init.juj'.
+ 21   
+ 21   [L0]-> set x3dom5_html = blob * interpolate {{.}} <<exec nodejs.cmd ./make_x3dom.js <- {get names scene.*} @@ nocache @@ someother @@ timeout=5
+ 21   [R0]-> DONE 
+ 21   
+ 21   [L0]-> set points = suffix
+ 21     
+ 21     [L1]-> set spheres = &SELF
+ 21       SuffixLayer. We have suffix 'spheres'. Processing it.
+ 21       SuffixLayer. We are atop another suffix, stopping process. Another suffix is points.
+ 21     [R1]-> DONE 
+ 21     
+ 21     [L1]-> end
+ 21     stream_dialog[L1] : 0 sec.
+ 21     SuffixLayer: Generating new variables for suffix.
+ 21     SuffixLayer: Getting original value of suffix template variable points.colors via getorig
+ 21     SuffixLayer: Getting original value of suffix template variable points.spheres via getorig
+ 21   [R0]-> DONE 
+ 21   stream_dialog[L0] : 0 sec.
+ 21   load_data_one_file: file 'v5nodejs/init.juj' loaded good.
+ 21   
+ 21   [L0]-> load v6iframe/init.juj
+ 21   load_data AFTER INTERP: v6iframe/init.juj
+ 21   load_data: no * exist, calling one_file
+ 21   load_data_one_file: loading file 'v6iframe/init.juj'.
+ 22   
+ 22   [L0]-> set param_x3dom_html = blob * interpolate {{.}} <<exec nodejs.cmd ./make_x3dom.js <- {get names scene.*} @@ nocache @@ someother @@ timeout=5
+ 22   [R0]-> DONE 
+ 22   
+ 22   [L0]-> set points = suffix
+ 22     
+ 22     [L1]-> set spheres = &SELF
+ 22       SuffixLayer. We have suffix 'spheres'. Processing it.
+ 22       SuffixLayer. We are atop another suffix, stopping process. Another suffix is points.
+ 22     [R1]-> DONE 
+ 22     
+ 22     [L1]-> end
+ 22     stream_dialog[L1] : 0 sec.
+ 22     SuffixLayer: Generating new variables for suffix.
+ 22     SuffixLayer: Getting original value of suffix template variable points.colors via getorig
+ 22     SuffixLayer: Getting original value of suffix template variable points.spheres via getorig
+ 22   [R0]-> DONE 
+ 21   stream_dialog[L0] : 0.001 sec.
+ 22   load_data_one_file: file 'v6iframe/init.juj' loaded good.
+ 22   
+ 22   [L0]-> set viewhash = suffix
+ 22     
+ 22     [L1]-> set PARENT.pos  = &eval3[input=&SELF][cmd=pos=JSON.parse(input.split('#')[1]).view.pos; pos.x+" "+pos.y+" "+pos.z]
+ 22     [R1]-> DONE 
+ 22     
+ 22     [L1]-> set PARENT.look = &eval3[input=&SELF][cmd=k=JSON.parse(input.split('#')[1]).view.look; k[0].x+" "+k[0].y+" "+k[0].z + " " + k[1]]
+ 22     [R1]-> DONE 
+ 22     
+ 22     [L1]-> set PARENT.center  = &eval3[input=&SELF][cmd=pos=JSON.parse(input.split('#')[1]).view.center; pos.x+" "+pos.y+" "+pos.z]
+ 22     [R1]-> DONE 
+ 22     
+ 22     [L1]-> end
+ 22     stream_dialog[L1] : 0 sec.
+ 22     SuffixLayer: Generating new variables for suffix.
+ 22     SuffixLayer: Getting original value of suffix template variable viewhash.PARENT.center via getorig
+ 22     SuffixLayer: Getting original value of suffix template variable viewhash.PARENT.look via getorig
+ 22     SuffixLayer: Getting original value of suffix template variable viewhash.PARENT.pos via getorig
+ 22   [R0]-> DONE 
+ 20   stream_dialog[L0] : 0.002 sec.
+ 22   load_data_one_file: file 'libs\x3dom\init.juj' loaded good.
+ 22   
+ 22   [L0]-> log Libs loaded.
+ 22   Libs loaded.
+ 22   
+ 22   [L0]-> set scene.color=green
+ 22   [R0]-> DONE 
+ 22   
+ 22   [L0]-> set scene.back_color=gray
+ 22   [R0]-> DONE 
+  3   stream_dialog[L0] : 0.019 sec.
+ 22   load_data_one_file: file 'D:\scheme2\scheme2\scheme2go\/init.juj' loaded good.
+ 27   load_data AFTER INTERP: D:\GitHub\pravdin_heart\heart-may-15\1\verify.juj
+ 27   load_data: no * exist, calling one_file
+ 27   load_data_one_file: loading file 'D:\GitHub\pravdin_heart\heart-may-15\1\verify.juj'.
+ 27   
+ 27   [L0]-> set scene.a.points = <<file coord.txt
+ 27     SuffixLayer. We have suffix 'points'. Processing it.
+ 27     SuffixLayer: Looking for 'scene.a.points.params'. We will append founded param names with it's context value to generated variables.
+ 27     SuffixLayer: Assigning actual value to base.
+ 27     SuffixLayer: Generating new suffix variables for scene.a
+ 27     SuffixLayer: temporary overrided sandbox dir : ''
+ 27     
+ 27     [L1]-> set scene.a.points.colors = &scene.a.points.scalar_values.paletter
+ 27     [R1]-> DONE 
+ 27     
+ 27     [L1]-> set scene.a.points.spheres = &scene.a.points
+ 27       SuffixLayer. We have suffix 'spheres'. Processing it.
+ 27       SuffixLayer: Looking for 'scene.a.points.spheres.params'. We will append founded param names with it's context value to generated variables.
+ 27       SuffixLayer: Assigning actual value to base.
+ 28       SuffixLayer: Generating new suffix variables for scene.a.points
+ 28       SuffixLayer: temporary overrided sandbox dir : ''
+ 28       
+ 28       [L2]-> set scene.a.points.spheres.cmd~ = env <<exec D:\scheme2\scheme2\scheme2go\libs\suffixes\trimesher/trimesher.exe  <- spheres {get scene.a.points.spheres.radius || 0.1} {get scene.a.points.spheres.nx || 24} {get scene.a.points.spheres.ny || 16} <- {get scene.a.points.spheres binary}
+ 28       [R2]-> DONE 
+ 28       
+ 28       [L2]-> set scene.a.points.spheres.colors = &scene.a.points.spheres.scalar_values.paletter
+ 28       [R2]-> DONE 
+ 28       
+ 28       [L2]-> set scene.a.points.spheres.trimesh = &scene.a.points.spheres.cmd~.trimesh
+ 28         SuffixLayer. We have suffix 'trimesh'. Processing it.
+ 28         SuffixLayer: Looking for 'scene.a.points.spheres.trimesh.params'. We will append founded param names with it's context value to generated variables.
+ 28         SuffixLayer: Assigning actual value to base.
+ 28         SuffixLayer: Generating new suffix variables for scene.a.points.spheres
+ 28         SuffixLayer: temporary overrided sandbox dir : ''
+ 28         
+ 28         [L3]-> set scene.a.points.spheres.trimesh.colors = &scene.a.points.spheres.trimesh.scalar_values.paletter
+ 28         [R3]-> DONE 
+ 28         stream_dialog[L3] : 0 sec.
+ 28       [R2]-> DONE 
+ 28       
+ 28       [L2]-> set scene.a.points.spheres.trimesh.nodes = &scene.a.points.spheres.cmd~.trimesh.nodes
+ 28       [R2]-> DONE 
+ 28       stream_dialog[L2] : 0 sec.
+ 28     [R1]-> DONE 
+ 27     stream_dialog[L1] : 0.001 sec.
+ 28   [R0]-> DONE 
+ 28   
+ 28   [L0]-> set scene.b.trimesh = array * 3 <<file triangles.txt
+ 28     SuffixLayer. We have suffix 'trimesh'. Processing it.
+ 28     SuffixLayer: Looking for 'scene.b.trimesh.params'. We will append founded param names with it's context value to generated variables.
+ 28     SuffixLayer: Assigning actual value to base.
+ 28     SuffixLayer: Generating new suffix variables for scene.b
+ 28     SuffixLayer: temporary overrided sandbox dir : ''
+ 28     
+ 28     [L1]-> set scene.b.trimesh.colors = &scene.b.trimesh.scalar_values.paletter
+ 28     [R1]-> DONE 
+ 28     stream_dialog[L1] : 0 sec.
+ 28   [R0]-> DONE 
+ 28   
+ 28   [L0]-> set scene.b.trimesh.nodes = &scene.a.points
+ 28   [R0]-> DONE 
+ 27   stream_dialog[L0] : 0.001 sec.
+ 28   load_data_one_file: file 'D:\GitHub\pravdin_heart\heart-may-15\1\verify.juj' loaded good.
+ 28   load_data AFTER INTERP: D:\scheme2\scheme2\scheme2go\stuff\..\libs\x3dom\start_browser.juj
+ 28   load_data: no * exist, calling one_file
+ 28   load_data_one_file: loading file 'D:\scheme2\scheme2\scheme2go\stuff\..\libs\x3dom\start_browser.juj'.
+ 28   
+ 28   [L0]-> get bra
+ 28     Creating key... done! result=
+ 28     Generated target name: !exec!bra
+ 28     ProcessLayer7 eflag: checking cache of: !exec!bra
+ 28     ProcessLayer7 eflag: cache miss, not expanded
+ 28     Creating key... done! result=
+ 28     Preparing to spawn. Calculating command line.
+ 28     Interpolating string: (first 100 bytes):cmd /c start http://localhost:{get http_port}/v1?intermode=true^&cmd=get+x3dom5_html
+ 28     
+ 28     [L1]-> get http_port
+ 28     [R1]-> DONE 
+ 28     stream_dialog[L1] : 0 sec.
+ 28     Interpolation result for 'cmd /c start http://localhost:{get http_port}/v1?intermode=true^&cmd=get+x3dom5_html..' (0..100): cmd /c start http://localhost:8080/v1?intermode=true^&cmd=get+x3dom5_html
+ 28     #*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S
+ 28     Starting subprocess with command_line: cmd /c start http://localhost:8080/v1?intermode=true^&cmd=get+x3dom5_html
+ 28     Process key is: 
+ 28     CWD is: D:\scheme2\scheme2\scheme2go\libs\x3dom/
+ 52     ProcessLayer: feed_process: >>> Passing std input [INIT] to process. Context is names_prefix= params=
+ 52     ProcessLayer: feed_process: >>> finished creating std input for stage 1 [INIT]. Command line is: cmd /c start http://localhost:{get http_port}/v1?intermode=true^&cmd=get+x3dom5_html 
+ 53     ProcessLayer: feed_process: closing process stdin pipe because it is onerun and do not need replies.
+ 53     ProcessLayer: read_process_output: set_operands = 
+ 53     ProcessLayer: Waiting and reading and parsing process output... 
+115     ProcessLayer: read_process_output: 'set_operands' was empty, so I readed 1st line from process (0..200): 
+115     ProcessLayer: read_process_output: finished processing process output. 
+115     ProcessLayer: read_process_output: pushing __SET_EOF to queue to close process stdin. Because it is one-run process. 
+ 28     process-layer process iteration [cmd /c start http://localhost:{get http_port}/v1?intermode=true^&cmd=get+x3dom5_html ] : 0.087 sec.
+115   [R0]-> DONE 
+ 28   stream_dialog[L0] : 0.087 sec.
+115   load_data_one_file: file 'D:\scheme2\scheme2\scheme2go\stuff\..\libs\x3dom\start_browser.juj' loaded good.
+
+
+******************************************************************************************
+Mongoose: thread 10412 got HTTP request /v1?intermode=true&cmd=get+x3dom5_html
+844   
+844   [L0]-> get x3dom5_html
+844     Creating key... done! result=
+844     Generated target name: !exec!x3dom5_html
+844     ProcessLayer7 eflag: checking cache of: !exec!x3dom5_html
+844     ProcessLayer7 eflag: cache miss, not expanded
+844     Creating key... done! result=
+844     Preparing to spawn. Calculating command line.
+844     #*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S
+844     Starting subprocess with command_line: nodejs.cmd D:\scheme2\scheme2\scheme2go\libs\x3dom\v5nodejs/make_x3dom.js
+844     Process key is: 
+844     CWD is: D:\GitHub\pravdin_heart\heart-may-15\1/
+865     ProcessLayer: feed_process: >>> Passing std input [INIT] to process. Context is names_prefix= params=
+865     Interpolating string: (first 100 bytes):{get names scene.*}
+865     
+865     ProcessLayer: Waiting and reading and parsing process output... 865     865     
+ProcessLayer: read_process_output: set_operands = blob * interpolate {{.}}
+[L1865       ]-> Blob is reading get names scene.*-1
+ bytes..
+865     stream_dialog[L1] : 0.001 sec.
+866     Interpolation result for '{get names scene.*}..' (0..100): text 14 lines
+scene.a.points
+scene.a.points.colors
+scene.a.points.spheres
+scene.a.points.spheres.cmd
+866     ProcessLayer: feed_process: command eval finished, result has bytes total = 347
+866     ProcessLayer: feed_process: >>> finished creating std input for stage 1 [INIT]. Command line is: nodejs.cmd D:\scheme2\scheme2\scheme2go\libs\x3dom\v5nodejs/make_x3dom.js 
+866     ProcessLayer: feed_process: closing process stdin pipe because it is onerun and do not need replies.
+1034       Interpolating string: (first 100 bytes):<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <me
+1034       
+1034       [L2]-> get scene_w ||
+1034       [R2]-> DONE 
+1034       stream_dialog[L2] : 0 sec.
+1034       
+1034       [L2]-> get scene_h ||
+1034       [R2]-> DONE 
+1034       stream_dialog[L2] : 0 sec.
+1034       stream_dialog[L2] : 0 sec.
+1034       
+1034       [L2]-> get scene.viewpoint.pos || 0 0 50
+1034         PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.viewpoint.pos
+1034         try: expand scene.viewpoint
+1034           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.viewpoint
+1034           try: expand scene
+1034       [R2]-> DONE 
+1034       stream_dialog[L2] : 0 sec.
+1034       
+1034       [L2]-> get scene.viewpoint.look ||
+1034         PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.viewpoint.look
+1034         try: expand scene.viewpoint
+1035           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.viewpoint
+1035           try: expand scene
+1035       [R2]-> DONE 
+1034       stream_dialog[L2] : 0.001 sec.
+1035       
+1035       [L2]-> get scene.a.points.params.gather ||
+1035         PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.a.points.params.gather
+1035         try: expand scene.a.points.params
+1035           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.a.points.params
+1035           try: expand scene.a.points
+1035             ArrayLayer::LoadFromTextStreamOptimized...
+1035             ArrayLayer::LoadFromTextStreamOptimized... : 0.007 sec.
+1042             ARRAY READED..1042             Loaded 34884 values. Ptr=03310048
+1042             FileLayer: loaded to target with result = 1
+1042             FILE LAYER expand success, returning name !loadedfile!scene~a~points
+1042             PORTAL EXPANDED!!!!!!!!!!!!!
+1042             Name was      : scene.a.points.params
+1042             Portal name is: scene.a.points
+1042             It expanded to: !loadedfile!scene~a~points
+1042             =>new var name: !loadedfile!scene~a~points.params => Reloading it with context names_prefix= params=
+1042           PORTAL LAYER self expand success, returning name !loadedfile!scene~a~points.params
+1042           PORTAL EXPANDED!!!!!!!!!!!!!
+1042           Name was      : scene.a.points.params.gather
+1042           Portal name is: scene.a.points.params
+1042           It expanded to: !loadedfile!scene~a~points.params
+1042           =>new var name: !loadedfile!scene~a~points.params.gather => Reloading it with context names_prefix= params=
+1042         PortalLayer: passing to head, operation=get name=!loadedfile!scene~a~points.params.gather
+1042           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~a~points.params.gather
+1042           try: expand !loadedfile!scene~a~points.params
+1042             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~a~points.params
+1042             try: expand !loadedfile!scene~a~points
+1042       [R2]-> DONE 
+1035       stream_dialog[L2] : 0.007 sec.
+1042       
+1042       [L2]-> get scene.a.points.params.gather ||
+1042         PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.a.points.params.gather
+1042         try: expand scene.a.points.params
+1042           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.a.points.params
+1042           try: expand scene.a.points
+1043             FileLayer: file is already expanded, forwarding to target name !loadedfile!scene~a~points
+1043             FILE LAYER expand success, returning name !loadedfile!scene~a~points
+1043             PORTAL EXPANDED!!!!!!!!!!!!!
+1043             Name was      : scene.a.points.params
+1043             Portal name is: scene.a.points
+1043             It expanded to: !loadedfile!scene~a~points
+1043             =>new var name: !loadedfile!scene~a~points.params => Reloading it with context names_prefix= params=
+1043           PORTAL LAYER self expand success, returning name !loadedfile!scene~a~points.params
+1043           PORTAL EXPANDED!!!!!!!!!!!!!
+1043           Name was      : scene.a.points.params.gather
+1043           Portal name is: scene.a.points.params
+1043           It expanded to: !loadedfile!scene~a~points.params
+1043           =>new var name: !loadedfile!scene~a~points.params.gather => Reloading it with context names_prefix= params=
+1043         PortalLayer: passing to head, operation=get name=!loadedfile!scene~a~points.params.gather
+1043           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~a~points.params.gather
+1043           try: expand !loadedfile!scene~a~points.params
+1043             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~a~points.params
+1043             try: expand !loadedfile!scene~a~points
+1043       [R2]-> DONE 
+1042       stream_dialog[L2] : 0.001 sec.
+1043       
+1043       [L2]-> get scene.b.trimesh.params.gather ||
+1043         PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.trimesh.params.gather
+1043         try: expand scene.b.trimesh.params
+1043           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.trimesh.params
+1043           try: expand scene.b.trimesh
+1043             ArrayLayer::LoadFromTextStreamOptimizedDynamic1...
+1047             ArrayLayer::LoadFromTextStreamOptimizedDynamic1 finished reading, count=8468
+1043             ArrayLayer::LoadFromTextStreamOptimizedDynamic1... : 0.004 sec.
+1047             ARRAY READED..1047             Loaded 25404 values. Ptr=03332160
+1047             FileLayer: loaded to target with result = 1
+1047             FILE LAYER expand success, returning name !loadedfile!scene~b~trimesh
+1047             PORTAL EXPANDED!!!!!!!!!!!!!
+1047             Name was      : scene.b.trimesh.params
+1047             Portal name is: scene.b.trimesh
+1047             It expanded to: !loadedfile!scene~b~trimesh
+1047             =>new var name: !loadedfile!scene~b~trimesh.params => Reloading it with context names_prefix= params=
+1047           PORTAL LAYER self expand success, returning name !loadedfile!scene~b~trimesh.params
+1047           PORTAL EXPANDED!!!!!!!!!!!!!
+1047           Name was      : scene.b.trimesh.params.gather
+1047           Portal name is: scene.b.trimesh.params
+1047           It expanded to: !loadedfile!scene~b~trimesh.params
+1047           =>new var name: !loadedfile!scene~b~trimesh.params.gather => Reloading it with context names_prefix= params=
+1047         PortalLayer: passing to head, operation=get name=!loadedfile!scene~b~trimesh.params.gather
+1048           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~b~trimesh.params.gather
+1048           try: expand !loadedfile!scene~b~trimesh.params
+1048             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~b~trimesh.params
+1048             try: expand !loadedfile!scene~b~trimesh
+1048       [R2]-> DONE 
+1043       stream_dialog[L2] : 0.005 sec.
+1048       
+1048       [L2]-> get scene.b.trimesh.params.gather ||
+1048         PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.trimesh.params.gather
+1048         try: expand scene.b.trimesh.params
+1048           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.trimesh.params
+1048           try: expand scene.b.trimesh
+1048             FileLayer: file is already expanded, forwarding to target name !loadedfile!scene~b~trimesh
+1048             FILE LAYER expand success, returning name !loadedfile!scene~b~trimesh
+1048             PORTAL EXPANDED!!!!!!!!!!!!!
+1048             Name was      : scene.b.trimesh.params
+1048             Portal name is: scene.b.trimesh
+1048             It expanded to: !loadedfile!scene~b~trimesh
+1048             =>new var name: !loadedfile!scene~b~trimesh.params => Reloading it with context names_prefix= params=
+1048           PORTAL LAYER self expand success, returning name !loadedfile!scene~b~trimesh.params
+1048           PORTAL EXPANDED!!!!!!!!!!!!!
+1048           Name was      : scene.b.trimesh.params.gather
+1048           Portal name is: scene.b.trimesh.params
+1048           It expanded to: !loadedfile!scene~b~trimesh.params
+1048           =>new var name: !loadedfile!scene~b~trimesh.params.gather => Reloading it with context names_prefix= params=
+1048         PortalLayer: passing to head, operation=get name=!loadedfile!scene~b~trimesh.params.gather
+1048           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~b~trimesh.params.gather
+1048           try: expand !loadedfile!scene~b~trimesh.params
+1048             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~b~trimesh.params
+1048             try: expand !loadedfile!scene~b~trimesh
+1048       [R2]-> DONE 
+1048       stream_dialog[L2] : 0 sec.
+1048       Interpolation result for '<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <me..' (0..100): <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <me
+1048       Blob readed 11514 bytes. Input state good?=1
+1048     ProcessLayer: read_process_output: finished processing process output. 
+1048     ProcessLayer: read_process_output: pushing __SET_EOF to queue to close process stdin. Because it is one-run process. 
+844     process-layer process iteration [nodejs.cmd D:\scheme2\scheme2\scheme2go\libs\x3dom\v5nodejs/make_x3dom.js ] : 0.205 sec.
+1049   [R0]-> DONE 
+843   stream_dialog[L0] : 0.205 sec.
+Mongoose: sent response of size 11514
+Mongoose: connection info. remote_port=22682
+mongoose event_handler /v1?intermode=true&cmd=get+x3dom5_html : 0.206 sec.
+mongoose_total_elapsed=0.206
+
+
+******************************************************************************************
+Mongoose: thread 10412 got HTTP request /v1?intermode=true&oldcmd=get+x3dom5_html&basetimestamp=1432798892882&cmd=%0Aget+part_x3dom_html[part=scene.a.points][cmd_for_log=echo+nop]
+1429   
+1429   [L0]-> get part_x3dom_html[part=scene.a.points][cmd_for_log=echo nop]
+1429     FuncLayer: entry found. checking missed args. Mathing entries count: 1
+1429     DataFunction and Entry both found. Passing to next layer with entry's stored name 'part_x3dom_html[cmd_for_log=any][part=any]' with context names_prefix= params=[cmd_for_log=echo nop][part=scene.a.points]
+1429     Creating key... done! result=[cmd_for_log=echo nop][part=scene.a.points]
+1429     Generated target name: !exec!part_x3dom_html!context!~cmd_for_log~echo~nop~~part~scene~a~points~
+1429     ProcessLayer7 eflag: checking cache of: !exec!part_x3dom_html!context!~cmd_for_log~echo~nop~~part~scene~a~points~
+1429     ProcessLayer7 eflag: cache miss, not expanded
+1429     Creating key... done! result=[cmd_for_log=echo nop]
+1429     Preparing to spawn. Calculating command line.
+1429     #*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S*S
+1429     Starting subprocess with command_line: nodejs_loop.cmd make_x3dom-part
+1429     Process key is: [cmd_for_log=echo nop]
+1429     CWD is: D:\GitHub\pravdin_heart\heart-may-15\1/
+1446     ProcessLayer: feed_process: >>> Passing std input [INIT+EVERY] to process. Context is names_prefix= params=[cmd_for_log=echo nop][part=scene.a.points]
+1446     D:\scheme2\scheme2\scheme2go\libs\x3dom\v3nodejs/make_x3dom.js1446     ProcessLayer: feed_process: command eval finished, result has bytes total = 63
+1447     Interpolating string: (first 100 bytes):{get names {getorig part}*}
+1447     Interpolating string: (first 100 bytes):get names {getorig part}*
+1447     
+1447     [L1]-> getorig part
+1447       Found name=part in context, value[0..100]=scene.a.points
+1447     [R1]-> DONE 
+1447     stream_dialog[L1] : 0 sec.
+1447     Interpolation result for 'get names {getorig part}*..' (0..100): get names scene.a.points*
+1447     
+1447     [L1]-> get names scene.a.points*
+1447     stream_dialog[L1] : 0 sec.
+1447     Interpolation result for '{get names {getorig part}*}..' (0..100): text 8 lines
+scene.a.poi1447     nts
+scProcessLayer: Waiting and reading and parsing process output... e
+ne.a.poin1448     tProcessLayer: read_process_output: set_operands = s
+.colors
+scene.a.points.spheres
+scene.a.points.spheres.cmd~
+1448     ProcessLayer: feed_process: command eval finished, result has bytes total = 237
+1448     ProcessLayer: feed_process: >>> finished creating std input for stage 1 [INIT+EVERY]. Command line is: nodejs_loop.cmd make_x3dom-part 
+1448     ProcessLayer: feed_process: DO NOT closing process stdin pipe because onerun=0 and send-replies=0
+1619     ProcessLayer: read_process_output: 'set_operands' was empty, so I readed 1st line from process (0..200): blob 2909 interpolate {{.}}
+1619       Blob is reading 2909 bytes..
+1619       Interpolating string: (first 100 bytes):<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <me
+1619       
+1619       [L2]-> get scene_w ||
+1619       [R2]-> DONE 
+1619       stream_dialog[L2] : 0 sec.
+1619       
+1619       [L2]-> get scene_h ||
+1619       [R2]-> DONE 
+1619       stream_dialog[L2] : 0 sec.
+1619       
+1619       [L2]-> get scene.viewpoint.pos || 0 0 50
+1619         PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.viewpoint.pos
+1619         try: expand scene.viewpoint
+1619           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.viewpoint
+1619           try: expand scene
+1619       [R2]-> DONE 
+1619       stream_dialog[L2] : 0 sec.
+1619       
+1619       [L2]-> get scene.viewpoint.look ||
+1619         PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.viewpoint.look
+1619         try: expand scene.viewpoint
+1619           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.viewpoint
+1619           try: expand scene
+1620       [R2]-> DONE 
+1619       stream_dialog[L2] : 0.001 sec.
+1620       
+1620       [L2]-> get scene.transform.scale || 1 1 1
+1620         PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.transform.scale
+1620         try: expand scene.transform
+1620           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.transform
+1620           try: expand scene
+1620       [R2]-> DONE 
+1620       stream_dialog[L2] : 0 sec.
+1620       
+1620       [L2]-> get scene.a.points?color || blue
+1620         CascadeLayer2: doing my job
+1620           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.a.points.color
+1620           try: expand scene.a.points
+1620             FileLayer: file is already expanded, forwarding to target name !loadedfile!scene~a~points
+1620             FILE LAYER expand success, returning name !loadedfile!scene~a~points
+1620             PORTAL EXPANDED!!!!!!!!!!!!!
+1620             Name was      : scene.a.points.color
+1620             Portal name is: scene.a.points
+1620             It expanded to: !loadedfile!scene~a~points
+1620             =>new var name: !loadedfile!scene~a~points.color => Reloading it with context names_prefix= params=[cmd_for_log=echo nop][part=scene.a.points]
+1620           PortalLayer: passing to head, operation=get name=!loadedfile!scene~a~points.color
+1620             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~a~points.color
+1620             try: expand !loadedfile!scene~a~points
+1620         CascadeLayer: triing var scene.a.color
+1620           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.a.color
+1620           try: expand scene.a
+1620             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.a
+1620             try: expand scene
+1620         CascadeLayer: triing var scene.color
+1620       [R2]-> DONE 
+1620       stream_dialog[L2] : 0 sec.
+1620       
+1620       [L2]-> get scene.a.points body
+1620         FileLayer: file is already expanded, forwarding to target name !loadedfile!scene~a~points
+1662       [R2]-> DONE 
+1620       stream_dialog[L2] : 0.042 sec.
+1662       
+1662       [L2]-> get scene.a.points.colors body ||
+1662         LINK LAYER found link: scene.a.points.colors --> scene.a.points.scalar_values.paletter. Passing to head.
+1662           >>>>>>>>>>>>> MethodChainLayer detected chained CALL TO METHOD while processing name scene.a.points.scalar_values.paletter
+1662           WARNING. MethodChainLayer stopped to process, because input variable doesnt exist. input_name=scene.a.points.scalar_values
+1662           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.a.points.scalar_values.paletter
+1662           try: expand scene.a.points.scalar_values
+1662             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.a.points.scalar_values
+1662             try: expand scene.a.points
+1662               FileLayer: file is already expanded, forwarding to target name !loadedfile!scene~a~points
+1662               FILE LAYER expand success, returning name !loadedfile!scene~a~points
+1662               PORTAL EXPANDED!!!!!!!!!!!!!
+1662               Name was      : scene.a.points.scalar_values
+1662               Portal name is: scene.a.points
+1662               It expanded to: !loadedfile!scene~a~points
+1662               =>new var name: !loadedfile!scene~a~points.scalar_values => Reloading it with context names_prefix= params=[cmd_for_log=echo nop][part=scene.a.points]
+1662             PORTAL LAYER self expand success, returning name !loadedfile!scene~a~points.scalar_values[cmd_for_log=echo nop][part=scene.a.points]
+1662             PORTAL EXPANDED!!!!!!!!!!!!!
+1662             Name was      : scene.a.points.scalar_values.paletter
+1662             Portal name is: scene.a.points.scalar_values
+1662             It expanded to: !loadedfile!scene~a~points.scalar_values[cmd_for_log=echo nop][part=scene.a.points]
+1662             =>new var name: !loadedfile!scene~a~points.scalar_values[cmd_for_log=echo nop][part=scene.a.points].paletter => Reloading it with context names_prefix= params=[cmd_for_log=echo nop][part=scene.a.points]
+1662           PortalLayer: passing to head, operation=get name=!loadedfile!scene~a~points.scalar_values[cmd_for_log=echo nop][part=scene.a.points].paletter
+1662             >>>>>>>>>>>>> MethodChainLayer detected chained CALL TO METHOD while processing name !loadedfile!scene~a~points.scalar_values.paletter
+1662             WARNING. MethodChainLayer stopped to process, because input variable doesnt exist. input_name=!loadedfile!scene~a~points.scalar_values
+1663             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~a~points.scalar_values.paletter
+1663             try: expand !loadedfile!scene~a~points.scalar_values
+1663               PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~a~points.scalar_values
+1663               try: expand !loadedfile!scene~a~points
+1663         ERROR - name 'scene.a.points.colors' is a link with target 'scene.a.points.scalar_values.paletter', but call to that target returned FALSE. Operation=get, operands=body , and context is names_prefix= params=[cmd_for_log=echo nop][part=scene.a.points]
+1663         PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.a.points.colors
+1663         try: expand scene.a.points
+1663           FileLayer: file is already expanded, forwarding to target name !loadedfile!scene~a~points
+1663           FILE LAYER expand success, returning name !loadedfile!scene~a~points
+1663           PORTAL EXPANDED!!!!!!!!!!!!!
+1663           Name was      : scene.a.points.colors
+1663           Portal name is: scene.a.points
+1663           It expanded to: !loadedfile!scene~a~points
+1663           =>new var name: !loadedfile!scene~a~points.colors => Reloading it with context names_prefix= params=[cmd_for_log=echo nop][part=scene.a.points]
+1663         PortalLayer: passing to head, operation=get name=!loadedfile!scene~a~points.colors
+1663           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~a~points.colors
+1663           try: expand !loadedfile!scene~a~points
+1663       [R2]-> DONE 
+1662       stream_dialog[L2] : 0.001 sec.
+1663       Interpolating string: (first 100 bytes):{{get cmd_for_log || get errors body}}
+1663       
+1663       [L2]-> get cmd_for_log || get errors body
+1663         Found name=cmd_for_log in context, value[0..100]=echo nop
+1663       [R2]-> DONE 
+1663       stream_dialog[L2] : 0 sec.
+1663       Interpolation result for '{{get cmd_for_log || get errors body}}..' (0..100): echo nop
+1663       
+1663       [L2]-> echo nop
+1663       stream_dialog[L2] : 0 sec.
+1663       Interpolation result for '<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <me..' (0..100): <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <me
+1663       Blob readed 284654 bytes. Input state good?=1
+1663     ProcessLayer: read_process_output: finished processing process output. 
+1664     ProcessLayer: feed_process: got __NOP__ and then output-finished flag, breaking feeder loop.
+1664     ProcessLayer: feed_process: >>> finished creating std input for stage 2.
+1429     process-layer process iteration [nodejs_loop.cmd make_x3dom-part ] : 0.235 sec.
+1664   [R0]-> DONE 
+1429   stream_dialog[L0] : 0.235 sec.
+Mongoose: sent response of size 284654
+Mongoose: connection info. remote_port=22682
+mongoose event_handler /v1?intermode=true&oldcmd=get+x3dom5_html&basetimestamp=1432798892882&cmd=%0Aget+part_x3dom_html[part=scene.a.points][cmd_for_log=echo+nop] : 0.235 sec.
+mongoose_total_elapsed=0.441
+
+
+******************************************************************************************
+Mongoose: thread 10412 got HTTP request /v1?intermode=true&oldcmd=get+x3dom5_html&basetimestamp=1432798892882&cmd=%0Aget+part_x3dom_html[part=scene.b.trimesh][cmd_for_log=echo+nop]
+1664   
+1664   [L0]-> get part_x3dom_html[part=scene.b.trimesh][cmd_for_log=echo nop]
+1664     FuncLayer: entry found. checking missed args. Mathing entries count: 1
+1664     DataFunction and Entry both found. Passing to next layer with entry's stored name 'part_x3dom_html[cmd_for_log=any][part=any]' with context names_prefix= params=[cmd_for_log=echo nop][part=scene.b.trimesh]
+1665     Creating key... done! result=[cmd_for_log=echo nop][part=scene.b.trimesh]
+1665     Generated target name: !exec!part_x3dom_html!context!~cmd_for_log~echo~nop~~part~scene~b~trimesh~
+1665     ProcessLayer7 eflag: checking cache of: !exec!part_x3dom_html!context!~cmd_for_log~echo~nop~~part~scene~b~trimesh~
+1665     ProcessLayer7 eflag: cache miss, not expanded
+1665     Creating key... done! result=[cmd_for_log=echo nop]
+1665     ProcessLayer: feed_process: >>> Passing std input [+EVERY] to process. Context is names_prefix= params=[cmd_for_log=echo nop][part=scene.b.trimesh]
+1665     D:\scheme2\scheme2\scheme2go\libs\x3dom\v3nodejs/make_x3dom.js1665     ProcessLayer: feed_process: command eval finished, result has bytes total = 63
+1665     Interpolating string: (first 100 bytes):{get names {getorig part}*}
+1665     Interpolating string: (first 100 bytes):get names {getorig part}*
+1665     ProcessLayer: Waiting and reading and parsing process output... 1665     ProcessLayer: read_process_output: set_operands = 
+1665     
+
+1665     [L1]-> getorig part
+1665       Found name=part in context, value[0..100]=scene.b.trimesh
+1665     [R1]-> DONE 
+1665     stream_dialog[L1] : 0 sec.
+1665     Interpolation result for 'get names {getorig part}*..' (0..100): get names scene.b.trimesh*
+1665     
+1665     [L1]-> get names scene.b.trimesh*
+1665     stream_dialog[L1] : 0 sec.
+1665     Interpolation result for '{get names {getorig part}*}..' (0..100): text 3 lines
+scene.b.trimesh
+scene.b.trimesh.colors
+scene.b.trimesh.nodes
+1665     ProcessLayer: feed_process: command eval finished, result has bytes total = 74
+1665     ProcessLayer: feed_process: >>> finished creating std input for stage 1 [+EVERY]. Command line is: nodejs_loop.cmd make_x3dom-part 
+1665     ProcessLayer: feed_process: DO NOT closing process stdin pipe because onerun=0 and send-replies=0
+1672     ProcessLayer: read_process_output: 'set_operands' was empty, so I readed 1st line from process (0..200): blob 3285 interpolate {{.}}
+1672       Blob is reading 3285 bytes..
+1672       Interpolating string: (first 100 bytes):<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <me
+1672       
+1672       [L2]-> get scene_w ||
+1672       [R2]-> DONE 
+1672       stream_dialog[L2] : 0 sec.
+1672       
+1672       [L2]-> get scene_h ||
+1672       [R2]-> DONE 
+1672       stream_dialog[L2] : 0 sec.
+1672       
+1672       [L2]-> get scene.viewpoint.pos || 0 0 50
+1672         PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.viewpoint.pos
+1672         try: expand scene.viewpoint
+1672           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.viewpoint
+1672           try: expand scene
+1672       [R2]-> DONE 
+1672       stream_dialog[L2] : 0 sec.
+1672       
+1672       [L2]-> get scene.viewpoint.look ||
+1672         PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.viewpoint.look
+1672         try: expand scene.viewpoint
+1672           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.viewpoint
+1672           try: expand scene
+1672       [R2]-> DONE 
+1672       stream_dialog[L2] : 0 sec.
+1672       
+1672       [L2]-> get scene.transform.scale || 1 1 1
+1672         PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.transform.scale
+1672         try: expand scene.transform
+1672           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.transform
+1672           try: expand scene
+1672       [R2]-> DONE 
+1672       stream_dialog[L2] : 0.001 sec.
+1673       
+1673       [L2]-> get scene.b.trimesh?color || yellow
+1673         CascadeLayer2: doing my job
+1673           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.trimesh.color
+1673           try: expand scene.b.trimesh
+1673             FileLayer: file is already expanded, forwarding to target name !loadedfile!scene~b~trimesh
+1673             FILE LAYER expand success, returning name !loadedfile!scene~b~trimesh
+1673             PORTAL EXPANDED!!!!!!!!!!!!!
+1673             Name was      : scene.b.trimesh.color
+1673             Portal name is: scene.b.trimesh
+1673             It expanded to: !loadedfile!scene~b~trimesh
+1673             =>new var name: !loadedfile!scene~b~trimesh.color => Reloading it with context names_prefix= params=[cmd_for_log=echo nop][part=scene.b.trimesh]
+1673           PortalLayer: passing to head, operation=get name=!loadedfile!scene~b~trimesh.color
+1673             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~b~trimesh.color
+1673             try: expand !loadedfile!scene~b~trimesh
+1673         CascadeLayer: triing var scene.b.color
+1673           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.color
+1673           try: expand scene.b
+1673             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b
+1673             try: expand scene
+1673         CascadeLayer: triing var scene.color
+1673       [R2]-> DONE 
+1673       stream_dialog[L2] : 0 sec.
+1673       
+1673       [L2]-> get scene.b.trimesh?color || yellow
+1673         CascadeLayer2: doing my job
+1673           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.trimesh.color
+1673           try: expand scene.b.trimesh
+1673             FileLayer: file is already expanded, forwarding to target name !loadedfile!scene~b~trimesh
+1673             FILE LAYER expand success, returning name !loadedfile!scene~b~trimesh
+1673             PORTAL EXPANDED!!!!!!!!!!!!!
+1673             Name was      : scene.b.trimesh.color
+1673             Portal name is: scene.b.trimesh
+1673             It expanded to: !loadedfile!scene~b~trimesh
+1673             =>new var name: !loadedfile!scene~b~trimesh.color => Reloading it with context names_prefix= params=[cmd_for_log=echo nop][part=scene.b.trimesh]
+1673           PortalLayer: passing to head, operation=get name=!loadedfile!scene~b~trimesh.color
+1674             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~b~trimesh.color
+1674             try: expand !loadedfile!scene~b~trimesh
+1674         CascadeLayer: triing var scene.b.color
+1674           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.color
+1674           try: expand scene.b
+1674             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b
+1674             try: expand scene
+1674         CascadeLayer: triing var scene.color
+1674       [R2]-> DONE 
+1673       stream_dialog[L2] : 0.001 sec.
+1674       
+1674       [L2]-> get scene.b.trimesh?transparency || 0
+1674         CascadeLayer2: doing my job
+1674           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.trimesh.transparency
+1674           try: expand scene.b.trimesh
+1674             FileLayer: file is already expanded, forwarding to target name !loadedfile!scene~b~trimesh
+1674             FILE LAYER expand success, returning name !loadedfile!scene~b~trimesh
+1674             PORTAL EXPANDED!!!!!!!!!!!!!
+1674             Name was      : scene.b.trimesh.transparency
+1674             Portal name is: scene.b.trimesh
+1674             It expanded to: !loadedfile!scene~b~trimesh
+1674             =>new var name: !loadedfile!scene~b~trimesh.transparency => Reloading it with context names_prefix= params=[cmd_for_log=echo nop][part=scene.b.trimesh]
+1674           PortalLayer: passing to head, operation=get name=!loadedfile!scene~b~trimesh.transparency
+1674             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~b~trimesh.transparency
+1674             try: expand !loadedfile!scene~b~trimesh
+1674         CascadeLayer: triing var scene.b.transparency
+1674           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.transparency
+1674           try: expand scene.b
+1674             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b
+1674             try: expand scene
+1674         CascadeLayer: triing var scene.transparency
+1674           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.transparency
+1674           try: expand scene
+1674       [R2]-> DONE 
+1674       stream_dialog[L2] : 0 sec.
+1674       
+1674       [L2]-> get scene.b.trimesh?transparency || 0
+1674         CascadeLayer2: doing my job
+1674           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.trimesh.transparency
+1674           try: expand scene.b.trimesh
+1674             FileLayer: file is already expanded, forwarding to target name !loadedfile!scene~b~trimesh
+1674             FILE LAYER expand success, returning name !loadedfile!scene~b~trimesh
+1674             PORTAL EXPANDED!!!!!!!!!!!!!
+1674             Name was      : scene.b.trimesh.transparency
+1674             Portal name is: scene.b.trimesh
+1674             It expanded to: !loadedfile!scene~b~trimesh
+1674             =>new var name: !loadedfile!scene~b~trimesh.transparency => Reloading it with context names_prefix= params=[cmd_for_log=echo nop][part=scene.b.trimesh]
+1674           PortalLayer: passing to head, operation=get name=!loadedfile!scene~b~trimesh.transparency
+1674             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~b~trimesh.transparency
+1674             try: expand !loadedfile!scene~b~trimesh
+1674         CascadeLayer: triing var scene.b.transparency
+1674           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.transparency
+1674           try: expand scene.b
+1674             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b
+1674             try: expand scene
+1674         CascadeLayer: triing var scene.transparency
+1674           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.transparency
+1674           try: expand scene
+1675       [R2]-> DONE 
+1674       stream_dialog[L2] : 0.001 sec.
+1675       
+1675       [L2]-> get scene.b.trimesh body
+1675         FileLayer: file is already expanded, forwarding to target name !loadedfile!scene~b~trimesh
+1705       [R2]-> DONE 
+1675       stream_dialog[L2] : 0.03 sec.
+1705       
+1705       [L2]-> get scene.b.trimesh.nodes body
+1705         LINK LAYER found link: scene.b.trimesh.nodes --> scene.a.points. Passing to head.
+1705           FileLayer: file is already expanded, forwarding to target name !loadedfile!scene~a~points
+1755       [R2]-> DONE 
+1705       stream_dialog[L2] : 0.051 sec.
+1758       
+1758       [L2]-> get scene.b.trimesh.colors body ||
+1759         LINK LAYER found link: scene.b.trimesh.colors --> scene.b.trimesh.scalar_values.paletter. Passing to head.
+1759           >>>>>>>>>>>>> MethodChainLayer detected chained CALL TO METHOD while processing name scene.b.trimesh.scalar_values.paletter
+1759           WARNING. MethodChainLayer stopped to process, because input variable doesnt exist. input_name=scene.b.trimesh.scalar_values
+1759           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.trimesh.scalar_values.paletter
+1759           try: expand scene.b.trimesh.scalar_values
+1759             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.trimesh.scalar_values
+1759             try: expand scene.b.trimesh
+1759               FileLayer: file is already expanded, forwarding to target name !loadedfile!scene~b~trimesh
+1759               FILE LAYER expand success, returning name !loadedfile!scene~b~trimesh
+1759               PORTAL EXPANDED!!!!!!!!!!!!!
+1759               Name was      : scene.b.trimesh.scalar_values
+1759               Portal name is: scene.b.trimesh
+1759               It expanded to: !loadedfile!scene~b~trimesh
+1759               =>new var name: !loadedfile!scene~b~trimesh.scalar_values => Reloading it with context names_prefix= params=[cmd_for_log=echo nop][part=scene.b.trimesh]
+1759             PORTAL LAYER self expand success, returning name !loadedfile!scene~b~trimesh.scalar_values[cmd_for_log=echo nop][part=scene.b.trimesh]
+1759             PORTAL EXPANDED!!!!!!!!!!!!!
+1759             Name was      : scene.b.trimesh.scalar_values.paletter
+1759             Portal name is: scene.b.trimesh.scalar_values
+1759             It expanded to: !loadedfile!scene~b~trimesh.scalar_values[cmd_for_log=echo nop][part=scene.b.trimesh]
+1759             =>new var name: !loadedfile!scene~b~trimesh.scalar_values[cmd_for_log=echo nop][part=scene.b.trimesh].paletter => Reloading it with context names_prefix= params=[cmd_for_log=echo nop][part=scene.b.trimesh]
+1759           PortalLayer: passing to head, operation=get name=!loadedfile!scene~b~trimesh.scalar_values[cmd_for_log=echo nop][part=scene.b.trimesh].paletter
+1759             >>>>>>>>>>>>> MethodChainLayer detected chained CALL TO METHOD while processing name !loadedfile!scene~b~trimesh.scalar_values.paletter
+1759             WARNING. MethodChainLayer stopped to process, because input variable doesnt exist. input_name=!loadedfile!scene~b~trimesh.scalar_values
+1759             PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~b~trimesh.scalar_values.paletter
+1759             try: expand !loadedfile!scene~b~trimesh.scalar_values
+1759               PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~b~trimesh.scalar_values
+1759               try: expand !loadedfile!scene~b~trimesh
+1759         ERROR - name 'scene.b.trimesh.colors' is a link with target 'scene.b.trimesh.scalar_values.paletter', but call to that target returned FALSE. Operation=get, operands=body , and context is names_prefix= params=[cmd_for_log=echo nop][part=scene.b.trimesh]
+1759         PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: scene.b.trimesh.colors
+1759         try: expand scene.b.trimesh
+1759           FileLayer: file is already expanded, forwarding to target name !loadedfile!scene~b~trimesh
+1759           FILE LAYER expand success, returning name !loadedfile!scene~b~trimesh
+1759           PORTAL EXPANDED!!!!!!!!!!!!!
+1759           Name was      : scene.b.trimesh.colors
+1759           Portal name is: scene.b.trimesh
+1759           It expanded to: !loadedfile!scene~b~trimesh
+1759           =>new var name: !loadedfile!scene~b~trimesh.colors => Reloading it with context names_prefix= params=[cmd_for_log=echo nop][part=scene.b.trimesh]
+1759         PortalLayer: passing to head, operation=get name=!loadedfile!scene~b~trimesh.colors
+1759           PORTAL: up to this time, following name didnt responded. So I will try to expand it. Name: !loadedfile!scene~b~trimesh.colors
+1759           try: expand !loadedfile!scene~b~trimesh
+1759       [R2]-> DONE 
+1758       stream_dialog[L2] : 0.001 sec.
+1759       Interpolating string: (first 100 bytes):{{get cmd_for_log || get errors body}}
+1759       
+1759       [L2]-> get cmd_for_log || get errors body
+1759         Found name=cmd_for_log in context, value[0..100]=echo nop
+1759       [R2]-> DONE 
+1759       stream_dialog[L2] : 0 sec.
+1759       Interpolation result for '{{get cmd_for_log || get errors body}}..' (0..100): echo nop
+1760       
+1760       [L2]-> echo nop
+1760       stream_dialog[L2] : 0 sec.
+1760       Interpolation result for '<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <me..' (0..100): <!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <me
+1760       Blob readed 423464 bytes. Input state good?=1
+1760     ProcessLayer: read_process_output: finished processing process output. 
+1760     ProcessLayer: feed_process: got __NOP__ and then output-finished flag, breaking feeder loop.
+1760     ProcessLayer: feed_process: >>> finished creating std input for stage 2.
+1665     process-layer process iteration [nodejs_loop.cmd make_x3dom-part ] : 0.098 sec.
+1763   [R0]-> DONE 
+1664   stream_dialog[L0] : 0.099 sec.
+Mongoose: sent response of size 423464
+Mongoose: connection info. remote_port=22683
+mongoose event_handler /v1?intermode=true&oldcmd=get+x3dom5_html&basetimestamp=1432798892882&cmd=%0Aget+part_x3dom_html[part=scene.b.trimesh][cmd_for_log=echo+nop] : 0.102 sec.
+mongoose_total_elapsed=0.543
+
+
+******************************************************************************************
+Mongoose: thread 10412 got HTTP request /v1?intermode=true&oldcmd=get+x3dom5_html&basetimestamp=1432798892882&ts=1432798895430&cmd=get+errors+body
+3935   
+3935   [L0]-> get errors body
+3935     LINK LAYER found link: errors --> errors_list. Passing to head.
+3935   [R0]-> DONE 
+3935   stream_dialog[L0] : 0 sec.
+Mongoose: sent response of size 0
+Mongoose: connection info. remote_port=22683
+mongoose event_handler /v1?intermode=true&oldcmd=get+x3dom5_html&basetimestamp=1432798892882&ts=1432798895430&cmd=get+errors+body : 0.001 sec.
+mongoose_total_elapsed=0.544

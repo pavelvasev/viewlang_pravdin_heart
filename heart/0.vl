@@ -1,0 +1,14 @@
+//import components.scatter 1.0 as ScatterScene
+import "../scatter" 1.0
+
+Scene {
+  id: s
+
+  text: "Программа отображения тедраэдральной сетки. Укажите файл в формате GEO. <br/>
+         Двойной клик на изображении - выбрать тетраэдр/вершину."
+
+  GeoTetraScene {
+    //file: "../init0.geo"
+  }
+
+}

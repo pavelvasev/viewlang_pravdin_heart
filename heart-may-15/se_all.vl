@@ -1,0 +1,89 @@
+import "."
+import "../scatter" 1.0
+
+Item {
+
+  SeePointsAndTri {
+  id: pts
+
+    onCurPtChanged: {
+      gra.paramY.value = curPt+1;
+    }
+    property var back:gra.paramY.value
+    onBackChanged: curPt = back-1;
+
+    MultiScatterPlotWithPoi {
+      timeout: 1
+    rminmax:[null,null,0,1]
+    columnColors: [ [1,0,0], [0,1,0], [0,0,1], [1,1,0], [0,1,1], [1,0,1], [1,0.5,1] ];
+    
+    positions: pts.scalars || [];
+
+    property int big: 1
+    showDriverControls: false
+
+    id: gra
+    //scatterTag: "nobase"
+    controlsTag: "rightbottom"
+
+    anchors.fill: undefined
+    x: pts.leftWidgets.right+15
+    y: parent.height - height - 15
+    width: parent.width - x - 10 - parent.rightBottomWidgets.width - 10
+    height: [ 0, 250, parent.height * 0.8 ][big]
+    
+    //tag: "space" 
+
+    paramX.value: 0
+    
+    lineContext: lin
+    
+    function lin (ctx) {
+      ctx.lineWidth = 3;
+      ctx.shadowBlur=10;
+      ctx.shadowOffsetX=2;
+      ctx.shadowOffsetY=2;
+      ctx.shadowColor="black";
+      return 1;
+    }
+
+    subLineContext: lin2
+    
+    function lin2 (ctx) {
+      ctx.lineWidth = 2;
+      ctx.shadowBlur=5;
+      ctx.shadowOffsetX=1;
+      ctx.shadowOffsetY=1;
+      ctx.shadowColor="black";
+      return 1;
+    }    
+
+    Button {
+    text: "Размер"
+    property var tag: gra.controlsTag
+    onClicked: big = (big+1)%3
+    }
+    ResetButton {
+    target: gra
+    property var tag: gra.controlsTag
+    }
+
+     Rectangle {
+        width: 6
+        opacity: 0.5
+        height: gra.height-30
+        //x: gra.chartBorderSize + gra.chartWidth * (   (pts.tt/(pts.scalars?pts.scalars.length-1:1) - gra.selection[0]) ) / (gra.selection[1]-gra.selection[0]) 
+        x: gra.chartBorderSize + gra.chartWidth * (pts.tt/(pts.scalars?pts.scalars.length-1:1) )  -3
+        y:0
+        z:100
+        color: "lime"
+        id: ra
+        visible: (gra.selection[1]-gra.selection[0] >= 0.999)
+    }
+
+    
+    }
+
+  }
+
+}

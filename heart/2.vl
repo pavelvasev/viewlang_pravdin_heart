@@ -1,0 +1,57 @@
+//import components.scatter 1.0 as ScatterScene
+import "../scatter" 1.0
+import github.pavelvasev.viewlang1_components.scatter 1.0
+
+//import "http://cdn.rawgit.com/pavelvasev/qmlweb.components/master/QtQuick/Controls"
+
+//import "https://github.com/pavelvasev/qmlweb.components/tree/master/QtQuick/Controls"
+
+Scene {
+  id: s
+
+  //centerPoint: [-0.9849010122148609, -2.2283103232173183, 47.10249136613619] // [1.52, 1.11, 10.49]
+  
+  FileParam {
+    text: "Файлы графиков"
+    multiple: true
+    id: graphFiles
+    property var tag: "right"
+  }
+
+  GeoTetraScene {
+    file: Qt.resolvedUrl( "mech-04-2015/0.geo" )
+  }
+
+  Param {
+    text: "Высота графика"
+    min: 0
+    //max: Math.floor( jQuery(window).height()/100 )
+    max: 10
+    value: 3
+    id: hParam
+    property var tag: "left"
+  }  
+  
+  MultiScatterPlot {
+    fileParam.text: "Отображаемый график"
+//    visible: sph > 0
+
+    y: parent.bottom - sph -10
+    anchors: undefined
+    width: parent.width - x - 10 - parent.rightWidgets.width - 10
+    height: sph
+    x: parent.leftWidgets.right+15
+    
+    id: sp
+    
+    scatterTag: "nobase"
+    controlsTag: "right"
+    tag: "export"
+  }
+  
+  //property var sph: hParam.value*100
+  property var sph: hParam.value > 0 ? (s.bottom-23) * (hParam.value/10): 0
+  
+
+
+}

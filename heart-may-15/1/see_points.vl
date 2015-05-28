@@ -1,0 +1,36 @@
+Scene {
+  property alias points: thepoints
+  property alias file: inf.file
+
+  FileParam {
+    text:"Файл точек"
+    id: inf
+    file: Qt.resolvedUrl("coord.txt")
+  }
+
+  Points {
+    id: thepoints
+
+    property var q: {
+      if (!inf.file) {
+        positions = [];
+        return;
+      }
+      loadFile( (inf.file), function(res) {
+      var lines = res.split("\n");  
+      var arr = [];
+      for (var i=0; i<lines.length; i++) {
+        if (lines[i].indexOf("array") >= 0) continue;
+
+        var nums = lines[i].split(" ");
+        if (nums.length >= 3) {
+         arr.push( parseFloat(nums[0]) );
+         arr.push( parseFloat(nums[1]) );
+         arr.push( parseFloat(nums[2]) );
+        }
+      }
+      positions = arr;
+    });    
+    }
+  }
+}

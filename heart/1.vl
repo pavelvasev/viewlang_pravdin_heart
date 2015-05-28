@@ -1,0 +1,45 @@
+// Первая тестовая версия - тетрамеш и график. независимые.
+
+//import components.scatter 1.0 as ScatterScene
+import "../scatter" 1.0
+import github.pavelvasev.viewlang1_components.scatter 1.0
+
+//import "http://cdn.rawgit.com/pavelvasev/qmlweb.components/master/QtQuick/Controls"
+
+//import "https://github.com/pavelvasev/qmlweb.components/tree/master/QtQuick/Controls"
+
+Scene {
+  id: s
+
+  GeoTetraScene {
+  }
+  
+  MultiScatterPlot {
+//    visible: sph > 0
+
+    y: parent.bottom - sph -10
+    anchors: undefined
+    width: parent.width - x - 10
+    height: sph
+    x: parent.leftWidgets.right+15
+    
+    id: sp
+    
+    scatterTag: "nobase" //
+    controlsTag: "left"
+    tag: "export"
+  }
+  
+  //property var sph: hParam.value*100
+  property var sph: hParam.value > 0 ? (s.bottom-23) * (hParam.value/10): 0
+  
+  Param {
+    text: "Высота графика"
+    min: 0
+    //max: Math.floor( jQuery(window).height()/100 )
+    max: 10
+    value: 3
+    id: hParam
+  }
+
+}

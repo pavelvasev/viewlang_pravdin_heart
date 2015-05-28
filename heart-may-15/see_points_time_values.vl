@@ -1,0 +1,67 @@
+import "."
+
+SeePoints0 {
+  id: scen
+
+  property alias valFile: valParam.value
+
+  FileParam {
+    text: "Файл значений точек"
+    file: Qt.resolvedUrl("voltage_.json")
+    id: valParam
+  }
+  
+  property alias scalars: scen.scalarValues
+  
+  property var scalarValues: []
+  property alias tt: tParam.value
+  property var currentSV: scalarValues ? (scalarValues[tt] || []) : []
+
+  property var q: {
+      if (!valFile) {
+        scalarValues = [];
+        return;
+      }
+      loadFile( (valFile), function(res) {
+        console.log("so i parse json..");
+        scalarValues = parseJson( res );
+        console.log("done parsing");
+      } ); // loadFile
+      } //q
+
+  Text {
+    text: "Кол-во шагов (t):" + scalarValues.length
+    property var tag:"left"
+  }
+
+  Param {
+    text: "Текущее время t"
+    max: scalarValues.length-1
+    id: tParam
+    onValueChanged: {
+      //console.log("new t"); 
+//      debugger;
+    }
+  }
+
+  Paletter {
+    input: currentSV
+    id: pal
+    //revert: true
+    //file: null
+  }
+ 
+  points.colors: pal.output
+  //points.radius: 0.3
+  
+  /*
+  Button {
+    text: "dbg"
+    onClicked: {
+      debugger;
+      console.log(currentSV);
+    }
+  }
+  */
+
+}

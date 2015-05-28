@@ -1,0 +1,90 @@
+import "."
+import "https://github.com/pavelvasev/vl_scatter" 1.0
+
+Item {
+
+  SeePointsAndTri {
+    id: pts
+    
+    onCurPtChanged: {
+      gra.paramY.value = curPt;
+    }
+
+    MultiScatterPlotWithPoi {
+
+
+    positions: pts.scalars || [];
+  
+    property int big: 1
+    showDriverControls: false
+
+    id: gra
+    onSelectionChanged: console.log(gra.selection);
+    
+    //scatterTag: "nobase"
+    controlsTag: "rightbottom"
+
+    anchors.fill: undefined
+    x: pts.leftWidgets.right+15
+    y: parent.height - height - 15
+    width: parent.width - x - 10 - parent.rightBottomWidgets.width - 10
+    height: [ 0, 250, parent.height * 0.8 ][big]
+    
+    //tag: "space" 
+
+    paramX.value: 0
+    
+    lineContext: lin
+    
+    function lin (ctx) {
+      ctx.lineWidth = 3;
+      ctx.shadowBlur=10;
+      ctx.shadowOffsetX=2;
+      ctx.shadowOffsetY=2;
+      ctx.shadowColor="black";        
+      return 1;
+    }
+        
+    Button {
+      text: "Размер"
+      property var tag: gra.controlsTag
+      onClicked: big = (big+1)%3
+    }
+    ResetButton { 
+        target: gra
+        property var tag: gra.controlsTag
+    }
+
+      Rectangle {
+        width: 6
+        opacity: 0.5
+        height: gra.height-30
+        //x: gra.chartBorderSize + gra.chartWidth * (   (pts.tt/(pts.scalars?pts.scalars.length-1:1) - gra.selection[0]) ) / (gra.selection[1]-gra.selection[0]) 
+        x: gra.chartBorderSize + gra.chartWidth * (pts.tt/(pts.scalars?pts.scalars.length-1:1) )  -3
+        y:0
+        z:100
+        color: "lime"
+        id: ra
+        visible: (gra.selection[1]-gra.selection[0] >= 0.999)
+        
+        MouseArea {
+          id: ma
+          anchors.fill: parent
+          anchors.margins: -10
+          hoverEnabled: false
+          onPositionChanged: {
+            if (ma.pressed) {
+              var delta = ma.mouseX -5 -3;
+              console.log( ma.mouseX,delta );
+              ra.x = ra.x + delta;
+            }
+          }
+        }
+      }
+    
+    
+    }
+
+  }
+
+}

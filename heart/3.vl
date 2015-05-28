@@ -1,0 +1,120 @@
+//import components.scatter 1.0 as ScatterScene
+import "https://github.com/pavelvasev/vl_scatter" 1.0
+//import github.pavelvasev.viewlang1_components.scatter 1.0
+//import "http://cdn.rawgit.com/pavelvasev/qmlweb.components/master/QtQuick/Controls"
+//import "https://github.com/pavelvasev/qmlweb.components/tree/master/QtQuick/Controls"
+
+Scene {
+  id: s
+
+  //centerPoint: [-0.9849010122148609, -2.2283103232173183, 47.10249136613619] // [1.52, 1.11, 10.49]
+  Text {
+    text: "Для тетраэдров tetr*.dat,\nдля вершин versh*.dat"
+    property var tag: "right"
+  }
+  
+  property var samplGraphs: [Qt.resolvedUrl( "mech-04-2015/tetr10000.dat"),Qt.resolvedUrl( "mech-04-2015/tetr20000.dat"),Qt.resolvedUrl( "mech-04-2015/tetr30000.dat")];
+  property var samplGeo: Qt.resolvedUrl( "mech-04-2015/231.geo" );
+
+  Button {
+    property var tag: "left"
+    width: 160
+    text: "Поставить данные-примеры"
+    onClicked: {
+      graphFiles.files = samplGraphs;
+      tetrascene.file = samplGeo;
+      //tetrascene.file = Qt.resolvedUrl( "mech-04-2015/0.geo" );
+      //tetrascene.file = Qt.resolvedUrl( "mech-04-2015/231.geo" );
+    }
+  }
+  
+  FileParam {
+    text: "Файлы графиков"
+    multiple: true
+    id: graphFiles
+    property var tag: "right"
+
+    //files: 
+  }
+
+  GeoTetraScene {
+    //file: Qt.resolvedUrl( "mech-04-2015/231.geo" )
+    //onSelectedTetraChanged: 
+    id: tetrascene
+
+    onSelectedTetraChanged: {
+      console.log("Итак, выбранный tetraэдр изменен на ",selectedTetra );
+      if (selectedTetra >= 0) {
+        var desireName = "tetr"+selectedTetra+".dat";
+        console.log("Ведем поиск в файлах графиков имени ",desireName );
+        for (var i=0; i<graphFiles.files.length; i++) {
+          var f = graphFiles.files[i];
+          var name = f.name || f;
+          if (name.indexOf(desireName) >= 0) {
+            console.log("Нашли файл и устанавливаем его: ",f);
+            sp.fileParam.file = f;
+            break; 
+          }
+        } // for
+        console.log("Поиск завершен");
+      } // if
+    } // changed
+  }
+
+  // hiliteTetras
+  Button {
+    text: "Генерировать номера из файлов графиков"
+    property var tag: "left"
+    width: 170
+    onClicked: {
+      var acc=[];
+      for (var i=0; i<graphFiles.files.length; i++) {
+        var f = graphFiles.files[i];
+        var name = f.name || f;
+        var splitted = name.split("/");
+        name = splitted[ splitted.length-1 ];
+        console.log("ищу номер в имени ",name);
+        var match = /tetr(\d+)\.dat/.exec( name );
+        if (match) {
+          var number = parseInt( match[1] );
+          console.log("нашли номер ",number)
+          acc.push(number);
+        }
+        tetrascene.hiliteTetras = acc;
+      }
+    }
+  }
+  
+  
+  MultiScatterPlot {
+    fileParam.text: "Отображаемый график"
+//    visible: sph > 0
+
+    y: parent.bottom - sph -10
+    anchors: undefined
+    width: parent.width - x - 10 - parent.rightWidgets.width - 10
+    height: sph
+    x: parent.leftWidgets.right+15
+    
+    id: sp
+    
+    scatterTag: "nobase"
+    controlsTag: "right"
+    tag: "export"
+  }
+  
+  //property var sph: hParam.value*100
+  property var sph: hParam.value > 0 ? (s.bottom-23) * (hParam.value/10): 0
+  
+  Param {
+    text: "Высота графика"
+    min: 0
+    //max: Math.floor( jQuery(window).height()/100 )
+    max: 10
+    value: 3
+    id: hParam
+    property var tag: "right"
+  }  
+
+
+}

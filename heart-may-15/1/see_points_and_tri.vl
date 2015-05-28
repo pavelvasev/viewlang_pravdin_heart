@@ -1,0 +1,86 @@
+import "."
+
+Scene {
+
+  property alias points: pt.points
+  property alias tris: pt.trimesh
+
+  property alias trisFile: triFileParam.file
+  property alias pointsFile: pt.file
+
+  Button {
+    text: "Очистить"
+    onClicked: {
+      pointsFile = null;
+      trisFile = null;
+    }
+    property var tag: "top"
+  }
+
+  SeePoints {
+    id: pt
+  }
+
+  FileParam {
+    text: "Файл индексов треугольников"
+    file: Qt.resolvedUrl("triangles.txt")
+    id: triFileParam
+  }
+  
+  Trimesh {
+    id: trimesh
+    positions: pt.points.positions
+    indices: []
+    property var q: {
+      if (!triFileParam.file) {
+        indices = [];
+        return;
+      }
+    
+      loadFile( (triFileParam.file), function(res) {
+      var lines = res.split("\n");  
+      var arr = [];
+      for (var i=0; i<lines.length; i++) {
+        if (lines[i].indexOf("array") >= 0) continue;
+
+        var nums = lines[i].split(" ");
+        if (nums.length >= 3) {
+         arr.push( parseInt(nums[0]) );
+         arr.push( parseInt(nums[1]) );
+         arr.push( parseInt(nums[2]) );
+        }
+      }
+      indices = arr;
+    });    
+    }
+    wire: wireParam.value>0
+    opacity: triop.value/100.0
+//    wire: triShow.value==1
+//    visible: triShow.value>0
+  }
+  
+
+  Param {
+    id: wireParam
+    title: "Только каркас"
+    min:0
+    max:1
+    value:0
+  }  
+  Param {
+    text: "Прозрачность треугольников"
+    id: triop
+    value: 100
+  }  
+
+  
+  /*
+  Param {
+    text: "Отображение треугольников"
+    values: ["не показать","только сетку","показать"]
+    value: 2
+    id: triShow
+  }
+  */
+
+}

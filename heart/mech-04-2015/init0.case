@@ -1,0 +1,9 @@
+FORMAT
+type: ensight gold
+
+GEOMETRY
+model: 0.geo
+
+VARIABLE
+scalar per node:	pointScalars	init0.Nsca
+vector per node:	force	init0.Nvec

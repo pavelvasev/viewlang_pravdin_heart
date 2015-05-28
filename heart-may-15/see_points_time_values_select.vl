@@ -1,0 +1,34 @@
+import "."
+
+SeePoints1 {
+  id: scen
+
+  property var curPt: -1
+
+  onCurPtChanged: {
+    console.log("PointsSelect curpt property change!",curPt);
+  }
+
+  Spheres {
+    positions: scen.points.positions && curPt >= 0 ? scen.points.positions.slice( curPt*3, curPt*3+3 ) : []
+    id: sel
+    color: scen.points.colors && curPt >= 0 ? scen.points.colors.slice( curPt*3, curPt*3+3 ) : []
+    radius: 0.3 + 0.1 * scen.points.radius * 3
+    visible: positions.length>0
+  }    
+
+  SceneMouseEvents {
+    onDoubleClicked: {
+      var r = scen.points.intersect( sceneMouse );
+      console.log(r);
+      curPt = r ? (r.index) : -1;
+    }
+  }
+
+  Text {
+    y:3
+    text: "Двойной клик на 3d-сцене выбирает точку. Выбрана точка N"+ (curPt+1) + ". Скалярное значение="+(scen.currentSV ? scen.currentSV[curPt] : "-")
+    property var tag: "top"
+  }  
+  
+}
