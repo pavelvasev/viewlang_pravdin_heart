@@ -1,5 +1,5 @@
 import "."
-import "../scatter" 1.0
+import "https://github.com/pavelvasev/vl_scatter" 1.0
 
 Item {
 
