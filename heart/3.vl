@@ -6,6 +6,8 @@ import "https://github.com/pavelvasev/vl_scatter" 1.0
 
 Scene {
   id: s
+  
+  text: "selectedTetra="+ tetrascene.selectedTetra
 
   //centerPoint: [-0.9849010122148609, -2.2283103232173183, 47.10249136613619] // [1.52, 1.11, 10.49]
   Text {
