@@ -1564,3 +1564,31 @@ Mongoose: sent response of size 0
 Mongoose: connection info. remote_port=22683
 mongoose event_handler /v1?intermode=true&oldcmd=get+x3dom5_html&basetimestamp=1432798892882&ts=1432798895430&cmd=get+errors+body : 0.001 sec.
 mongoose_total_elapsed=0.544
+
+
+******************************************************************************************
+Mongoose: thread 11720 got HTTP request /target/target-script-min.js?
+Mongoose: not served by event_handler.
+mongoose event_handler /target/target-script-min.js? : 0 sec.
+mongoose_total_elapsed=0.544
+
+
+******************************************************************************************
+Mongoose: thread 13464 got HTTP request /target/target-script-min.js?
+Mongoose: not served by event_handler.
+mongoose event_handler /target/target-script-min.js? : 0 sec.
+mongoose_total_elapsed=0.544
+
+
+******************************************************************************************
+Mongoose: thread 10412 got HTTP request /target/target-script-min.js?
+Mongoose: not served by event_handler.
+mongoose event_handler /target/target-script-min.js? : 0 sec.
+mongoose_total_elapsed=0.544
+
+
+******************************************************************************************
+Mongoose: thread 10964 got HTTP request /target/target-script-min.js?
+Mongoose: not served by event_handler.
+mongoose event_handler /target/target-script-min.js? : 0 sec.
+mongoose_total_elapsed=0.544
