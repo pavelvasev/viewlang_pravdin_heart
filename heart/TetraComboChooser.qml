@@ -6,7 +6,8 @@ Item {
     function setselected( n ) {
         selected = n;
     }
-
+    
+    property alias tetrap: tetraParam
     Param {
       id: tetraParam
       text: "Номер тетраэдра"
@@ -17,7 +18,8 @@ Item {
       property var tag: "right"
 //      enableSliding: false
     }
-
+    
+    property alias seltetra: sel
     Tetras {
         color: 0xff00
         id: sel

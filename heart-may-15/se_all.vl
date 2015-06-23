@@ -1,10 +1,10 @@
 import "."
 import "https://github.com/pavelvasev/vl_scatter" 1.0
 
-Item {
+Scene {
 
   SeePointsAndTri {
-  id: pts
+    id: pts
 
     onCurPtChanged: {
       gra.paramY.value = curPt+1;
@@ -20,7 +20,7 @@ Item {
     positions: pts.scalars || [];
 
     property int big: 1
-    showDriverControls: false
+    //showDriverControls: false
 
     id: gra
     //scatterTag: "nobase"

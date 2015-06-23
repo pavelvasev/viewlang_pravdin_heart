@@ -1,0 +1,4 @@
+set scene.a.points = <<file coord.txt
+# set scene.a.points.scalar_values = <<file 3du0.Nsca
+set scene.b.trimesh = array * 3 <<file triangles.txt 
+set scene.b.trimesh.nodes = &scene.a.points

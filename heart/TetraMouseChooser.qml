@@ -16,6 +16,7 @@ Item {
   
   function select(onlyIntersect) {
     var r = source.visible ? source.intersect( sceneMouse ) : null;
+    console.log("2=>",r,source,sceneMouse);
 
     if (onlyIntersect) return r;
     
@@ -59,6 +60,7 @@ Item {
   }
 
   function applySelect( r ) {
+    
     tetraChooser.selected = r ? (r.faceIndex || r.index) : null;
   }
   
