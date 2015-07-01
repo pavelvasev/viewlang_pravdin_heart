@@ -1,0 +1,86 @@
+import "."
+import "../../vl_scatter" 1.0	
+
+ShowPoints {
+  id: scen
+
+  text: "Визуализация фазовых переменных"
+  
+  points.colors: scalars.output
+  
+  property var currentScalarValue: scalars.current ? scalars.current[ sel.currentIndex ] : undefined
+  
+  JsonScalars {
+    id: scalars
+    onTChanged: tips.tParam.value = t
+    
+    paletter.hivalue: currentScalarValue
+  }
+  
+  TrimeshOnPoints {
+    pt: scen.points
+  }
+
+  ShowTips {
+    id: tips
+  }
+
+  /*
+  SelectShow {
+    source: scen.points
+    id: sel
+  }
+  */
+  
+  
+  SelectDoubleClick {
+    source: scen.points
+    id: sel
+  }
+  
+
+  Text {
+    y:3
+    text: "Скалярное значение=" + currentScalarValue
+    property var tag: "top"
+  }
+
+  GrPos {
+  MultiScatterPlotWithPoi {
+    property var idx: sel.currentIndex
+    onIdxChanged: {
+      grafik.selectedParam.value = idx+1;
+    }
+
+    anchors.fill: parent
+    timeout: 1
+    controlsTag: "rightbottom"
+    id: grafik
+    positions: scalars.scalars
+
+    rminmax:[null,null,0,1]
+    columnColors: [ [1,0,0], [0,1,0], [0,0,1], [1,1,0], [0,1,1], [1,0,1], [1,0.5,1] ];
+
+    paramX.value: 0
+    paramX.visible: false
+
+    ScatterHiliteT {
+      t: scalars.t
+    }
+
+    ScatterSolidLine {
+    }
+
+    Repeater {
+      model: grafik.ycount
+      HilitePoint {
+        source: scen.points
+        num: grafik.columnYvalues[ index ];
+        color: grafik.columnColors[ index%grafik.columnColors.length ]
+      }
+    }
+
+  }
+  }
+
+}

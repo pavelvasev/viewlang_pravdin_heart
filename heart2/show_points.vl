@@ -1,0 +1,53 @@
+// Просмотр точек
+Scene {
+  text: "Просмотр точек из файла текстового формата x y z в каждой строке"
+
+  property alias points: thepoints
+  property alias file: inf.file
+
+  FileParam {
+    text:"Файл точек"
+    id: inf
+    file: Qt.resolvedUrl("data/coord.txt")
+  }
+
+  Param {
+    text: "Размер точек"
+    id: prParam
+    value: 20
+    min: 0
+    max: 50
+  }  
+
+  OpacityParam {
+    target: thepoints
+  }
+  
+  Points {
+    id: thepoints
+    radius: prParam.value / 10.0
+    visible: radius > 0 && opacity > 0
+    
+    property var q: {
+      if (!inf.file) {
+        positions = [];
+        return;
+      }
+      loadFile( (inf.file), function(res) {
+      var lines = res.split("\n");  
+      var arr = [];
+      for (var i=1; i<lines.length; i++) {
+        //if (lines[i].indexOf("array") >= 0) continue;
+
+        var nums = lines[i].split(" ");
+        if (nums.length >= 3) {
+         arr.push( parseFloat(nums[0]) );
+         arr.push( parseFloat(nums[1]) );
+         arr.push( parseFloat(nums[2]) );
+        }
+      }
+      positions = arr;
+    });    
+    }
+  }
+}

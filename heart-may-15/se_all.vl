@@ -68,7 +68,7 @@ Scene {
     property var tag: gra.controlsTag
     }
 
-     Rectangle {
+     Rectangle { // подстветка текущего t
         width: 6
         opacity: 0.5
         height: gra.height-30

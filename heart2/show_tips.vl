@@ -1,0 +1,76 @@
+import components.show_points
+
+Scene {
+  id: scen
+
+  text:"Просмотр файла формата tipsHans.info"
+  property var ctag: "right"
+  property alias tParam: tipsTime
+
+  FileParam {
+    text:"Файл типсов"
+    id: inf
+    file: Qt.resolvedUrl("data/tipsHans.info")
+    tag: ctag
+  }
+
+  CsvLoader {
+    file: inf.file
+    ColumnValues {
+      column: 0
+      id: timevalues
+    }
+    Param {
+      text: "время типсов"
+      id: tipsTime
+      values: timevalues.output
+      tag: ctag
+      color: "cyan"
+    }
+
+    IndexLines {
+      // output содержит хэш [время] -> строки
+      id: index
+      function filter(line) {
+        return line[0];
+      }
+    }
+      
+    GetColumns {
+      input: index.output[ tipsTime.value ] || []	
+      columns: [ 6,7,8 ]
+      id: poscolumns
+      
+      //Spheres {
+      //Points {
+      ShowPointsApp {
+        positions: parent.output
+        id: showTips
+        //radius: 0.5
+        color: [0.1,0.1,0.1]
+        ctag: "right"
+        mode: 1
+        text: "Типсы"
+      }
+      
+      Text {
+        text: "Кол-во типсов=" + showTips.positions.length/3
+        property var tag: ctag
+      }
+      Text {
+        text: sel.currentIndex >= 0 ? ("Выбран тип N"+sel.currentIndex) : " "
+        property var tag: ctag
+      }
+    }
+  }
+  
+  SelectShow {
+    id: sel
+    source: showTips
+    radius: showTips.radius*1.25
+    color: [0,0,0]
+    mode: 2
+    text.visible: scen.isRoot
+  }
+
+}

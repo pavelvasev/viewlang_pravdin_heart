@@ -1,0 +1,21 @@
+set tips=array * 9<<file tipsHans.info
+set params.time.values=&tips.columnvalues[column=0]
+set tipsxyz[time=any] = &tips.filterlines[column=0][value={get time}].getcolumns[columns=6,7,8]
+
+
+set scene.cells.points=<<file coord.txt
+set scene.cells.points.scalar_values=array * 1 <<file 3du0.Nsca
+set scene.cells.points.radius=0.2
+
+
+set scene.surf.trimesh=array * 3<<file triangles.txt
+set scene.surf.trimesh.transparency = 0.5
+set scene.surf.trimesh.nodes = &scene.cells.points
+set scene.surf.trimesh.scalar_values = &scene.cells.points.scalar_values
+
+
+set scene.filament.spheres.radius = 0.5
+set scene.filament.spheres.color = black
+set scene.filament.spheres[time=any] = &tipsxyz.getcolumns[columns=0,1,2]
+
+get scene.cells.points.scalar_values.to_json

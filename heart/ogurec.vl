@@ -1,0 +1,96 @@
+import QtQuick.Controls 1.0
+
+// Просто тупо тетраэдр из файла
+
+Scene  {
+    info: "Отображение тетраэдральной сетки сердечного желудочка. Укажите файл в формате GEO.<br>
+         Двойной клик на изображении - выбрать тетраэдр.
+  "
+ 
+    id: theScene
+
+    property alias file: fs.file
+    FileParam {
+        text: "Укажите файл *.GEO"
+        property var tag: "left"
+        id: fs
+        visible: false
+        value: Qt.resolvedUrl( "mech-04-2015/231.geo" )
+    }
+
+    Param {
+        id: wireParam
+        title: "wire on"
+        values: ["нет","да"]
+    }
+    Param {
+        id: oParam
+        title: "opacity"
+        min:0
+        max:100
+        value:50
+    }
+
+    TetrameshGeoLoad {
+        //src: "init0.geo"
+        src: Qt.resolvedUrl( fs.file )
+        id: tetra
+
+            TetrameshZFilter2 {
+                id: tetraz
+                zParam.value: 50
+
+                Tetramesh {
+                    title: "Main body of zheludochek after ZFilter"
+                    id:tetra
+                    opacity: oParam.value/100
+                    wire: wireParam.value > 0
+                    visible: oParam.value > 0
+                    color: [1,1,1]
+                    //color: [0,1,0]
+                    //color: 0x3cb371 //0x66cdaa
+                    //color: 0xffffff
+                    // shading: paramShading.value
+                }
+
+                TetrameshCenters {
+                    Points {
+                        RadiusParam { 
+                          value: 20
+                          mult:5
+                        }
+                        color: [1,0,0]
+                    }
+                }
+
+            } // zfilter
+
+    } // geoload
+
+    /////////////// Работа с выбором 
+    
+    property var selectedTetra
+    onSelectedTetraChanged: {
+      selTetraCombo.selected = selectedTetra;
+    }
+
+    TetraComboChooser {
+      id: selTetraCombo
+      source: tetra
+      onSelectedChanged: selectedTetra = selected;
+      seltetra.color: [1,0,1]
+      tetrap.text: "Выбранная ячейка"
+    }
+
+    TetraMouseChooser {
+      id: selTetraMouse
+      source: tetra
+      onSelectedChanged: {
+        selectedTetra = selected;
+        //selectedTetra = (selected === null ? -1 : tetraz.originalTetraNumbers[ selected ])
+      }
+      //enabled: false
+      //togetherWith: [selPointMouse,selTetraMouseHilited ]
+    }
+      
+}
