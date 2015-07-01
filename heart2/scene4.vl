@@ -10,6 +10,18 @@ ShowPoints {
   points.colors: scalars.output
   
   property var currentScalarValue: scalars.current ? scalars.current[ sel.currentIndex ] : undefined
+
+  Button {
+    text: "Очистить файлы"
+    width: 160
+    property var tag: "top"
+    onClicked: {
+      scalars.file = "";
+      trimesh.file = "";
+      tips.file = "";
+      scen.file = "";
+    }
+  }
   
   JsonScalars {
     id: scalars
@@ -20,6 +32,7 @@ ShowPoints {
   
   TrimeshOnPoints {
     pt: scen.points
+    id: trimesh
   }
 
   ShowTips {

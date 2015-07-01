@@ -6,6 +6,7 @@ Scene {
   text:"Просмотр файла формата tipsHans.info"
   property var ctag: "right"
   property alias tParam: tipsTime
+  property alias file: inf.file
 
   FileParam {
     text:"Файл типсов"

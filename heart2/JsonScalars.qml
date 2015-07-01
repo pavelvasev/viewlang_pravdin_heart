@@ -6,7 +6,8 @@ import "."
 
 Item {
   id: scen
-
+  
+  property alias file: valParam.value
   property alias valFile: valParam.value
   property alias output: pal.output
 
