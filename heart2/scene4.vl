@@ -7,8 +7,10 @@ ShowPoints {
   id: scen
 
   text: "Визуализация фазовых переменных"
-
-  property var datasets: ["","data","data1-simmetric","data2-non-simm"]
+  
+  // см readme_dataset.md
+  property var datasets: ["","data","data1-simmetric","data2-non-simm","https://dl.dropboxusercontent.com/u/523104/data1-simmetric-fun/"]
+  property var initDatasetNumber: 2
   
   points.colors: scalars.output
 
@@ -40,7 +42,7 @@ ShowPoints {
       values: datasets
       atoptext.visible: false
       aslider.visible: false
-      //value: initDatasetNumber
+      value: initDatasetNumber
     }
   }
 

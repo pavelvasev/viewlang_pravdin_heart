@@ -9,7 +9,7 @@ Scene {
 
   FileParam {
     text: "Файл индексов треугольников"
-    file: Qt.resolvedUrl("data/triangles.txt")
+//    file: Qt.resolvedUrl("data/triangles.txt")
     id: triFileParam
   }
 

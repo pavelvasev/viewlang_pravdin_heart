@@ -13,7 +13,7 @@ Item {
 
   FileParam {
     text: "Файл скалярных значений"
-    file: Qt.resolvedUrl("data/voltage_.json")
+//    file: Qt.resolvedUrl("data/voltage_.json")
     id: valParam
   }
 

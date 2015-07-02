@@ -12,8 +12,16 @@ Scene {
   FileParam {
     text:"Файл типсов"
     id: inf
-    file: Qt.resolvedUrl("data/tipsHans.info")
+//    file: Qt.resolvedUrl("data/tipsHans.info")
     tag: ctag
+  }
+  Button {
+    property var tag: ctag
+    text: "Загрузить пример"
+    visible: scen.isRoot
+    property var tgt: Qt.resolvedUrl("data/tipsHans.info")
+    onClicked: inf.file = tgt
+    width: 160
   }
 
   CsvLoader {
