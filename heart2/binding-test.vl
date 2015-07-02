@@ -1,0 +1,31 @@
+Scene {
+  Param {
+    id: a
+    text: "a"
+    onValueChanged: {
+      console.log("a val changed",value );
+      b.value = a.value;
+    }
+  }
+
+  Button {
+    text: "change a max"
+    property var tag: "left"
+    onClicked: {
+      a.max = 500;
+    }
+
+  }
+
+  Param {
+    id: b
+    text: "b"
+    max: 1000
+  }  
+
+  Binding {
+    target: a
+    property: "value"
+    value: b.value
+  }
+}

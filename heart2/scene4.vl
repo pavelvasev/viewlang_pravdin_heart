@@ -1,31 +1,61 @@
 import "."
 //import "../../vl_scatter" 1.0	
 import "https://github.com/pavelvasev/vl_scatter" 1.0	
+import github.pavelvasev.vl_scatter
 
 ShowPoints {
   id: scen
 
   text: "Визуализация фазовых переменных"
+
+  property var datasets: ["","data","data1-simmetric","data2-non-simm"]
   
   points.colors: scalars.output
-  
+
   property var currentScalarValue: scalars.current ? scalars.current[ sel.currentIndex ] : undefined
 
-  Button {
-    text: "Очистить файлы"
-    width: 160
+  Row {
     property var tag: "top"
-    onClicked: {
-      scalars.file = "";
-      trimesh.file = "";
-      tips.file = "";
-      scen.file = "";
+    spacing: 5
+    Button {
+      text: "Очистить файлы"
+      width: 160
+      onClicked: {
+        scalars.file = "";
+        trimesh.file = "";
+        tips.file = "";
+        scen.file = "";
+        combofiles.value=0;
+      }
     }
+
+    Text {
+      y: 3
+      text: "Набор данных"
+    }
+ 
+    Param {
+      id: combofiles
+      guid: "dataset"
+      values: datasets
+      atoptext.visible: false
+      aslider.visible: false
+      //value: initDatasetNumber
+    }
+  }
+
+  property var presetDataDir: Qt.resolvedUrl( combofiles.values[ combofiles.value ] )
+  onPresetDataDirChanged: {
+       if (!presetDataDir) return;
+        scalars.file = presetDataDir + "/voltage_.json";
+        trimesh.file = presetDataDir + "/triangles.txt";
+        tips.file = presetDataDir + "/tipsHans.info";
+        scen.file = presetDataDir + "/coord.txt";
   }
   
   JsonScalars {
     id: scalars
-    onTChanged: tips.tParam.value = t
+    onTChanged: tips.tParam.value = t // связь от времени скаляров -> ко времени типсов
     
     paletter.hivalue: currentScalarValue
   }
@@ -38,6 +68,13 @@ ShowPoints {
   ShowTips {
     id: tips
   }
+ 
+  // обратная связь от времени типсов -> к времени скаляров
+  Binding {
+    target: scalars
+    property: "t"
+    value: tips.tParam.value
+  }  
 
   /*
   SelectShow {

@@ -6,6 +6,7 @@ Scene {
   text:"Просмотр файла формата tipsHans.info"
   property var ctag: "right"
   property alias tParam: tipsTime
+  property alias time: tipsTime.value
   property alias file: inf.file
 
   FileParam {
@@ -69,7 +70,7 @@ Scene {
     id: sel
     source: showTips
     radius: showTips.radius*1.25
-    color: [0,0,0]
+    color: [1,0,0]
     mode: 2
     text.visible: scen.isRoot
   }
