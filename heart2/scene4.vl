@@ -16,6 +16,13 @@ ShowPoints {
 
   property var currentScalarValue: scalars.current ? scalars.current[ sel.currentIndex ] : undefined
 
+  function reset_files() {
+        scalars.file = "";
+        trimesh.file = "";
+        tips.file = "";
+        scen.file = "";
+  }
+
   Row {
     property var tag: "top"
     spacing: 5
@@ -23,10 +30,7 @@ ShowPoints {
       text: "Очистить файлы"
       width: 160
       onClicked: {
-        scalars.file = "";
-        trimesh.file = "";
-        tips.file = "";
-        scen.file = "";
+        reset_files();
         combofiles.value=0;
       }
     }
@@ -48,11 +52,13 @@ ShowPoints {
 
   property var presetDataDir: Qt.resolvedUrl( combofiles.values[ combofiles.value ] )
   onPresetDataDirChanged: {
-       if (!presetDataDir) return;
+        console.log("called load with presetDataDir=",presetDataDir);
+        if (!presetDataDir || presetDataDir.length == 0) return;
+        reset_files(); // очистим сначала
+        scen.file = presetDataDir + "/coord.txt";
         scalars.file = presetDataDir + "/voltage_.json";
         trimesh.file = presetDataDir + "/triangles.txt";
         tips.file = presetDataDir + "/tipsHans.info";
-        scen.file = presetDataDir + "/coord.txt";
   }
   
   JsonScalars {
