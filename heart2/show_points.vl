@@ -1,5 +1,7 @@
 // Просмотр точек
 Scene {
+  id: scen
+
   text: "Просмотр точек из файла текстового формата x y z в каждой строке"
 
   property alias points: thepoints
@@ -8,7 +10,7 @@ Scene {
   FileParam {
     text:"Файл точек"
     id: inf
-    //file: Qt.resolvedUrl("data/coord.txt")
+    file: scen.isRoot ? Qt.resolvedUrl("data/coord.txt") : ""
   }
 
   Param {
