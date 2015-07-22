@@ -9,7 +9,7 @@ ShowPoints {
   text: "Визуализация фазовых переменных"
   
   // см readme_dataset.md
-  property var datasets: ["","data","data1-simmetric","data2-non-simm","https://dl.dropboxusercontent.com/u/523104/data1-simmetric-fun/"]
+  property var datasets: ["","data","data1-simmetric","data2-non-simm","https://dl.dropboxusercontent.com/u/523104/data1-simmetric-fun","https://dl.dropboxusercontent.com/u/523104/heart/nosimm-2015-07-17"]
   property var initDatasetNumber: 1
   
   points.colors: scalars.output
@@ -47,6 +47,10 @@ ShowPoints {
       atoptext.visible: false
       aslider.visible: false
       value: initDatasetNumber
+    }
+
+    Links {
+      values: [ ["справка dropbox","https://docs.google.com/document/d/1U0NMxt4eFm__sdlOe6_9aS-SN91IZSTx1qpakbBXsq8/edit?usp=sharing"] ]
     }
   }
 
