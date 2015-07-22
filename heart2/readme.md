@@ -30,4 +30,4 @@ voltage_.json
 
 ## Как записать видео
 
-С помощью http://www.screencast-o-matic.com/screen_recorder
+[Список программ](https://docs.google.com/document/d/1JrW6N0aYd5p9DTGkChp4U0f1H7rr8j2Eor0DttTSrn4/edit?usp=sharing)
