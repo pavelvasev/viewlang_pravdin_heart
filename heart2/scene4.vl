@@ -16,6 +16,10 @@ ShowPoints {
 
   property var currentScalarValue: scalars.current ? scalars.current[ sel.currentIndex ] : undefined
 
+  help: [ ["справка dropbox","https://docs.google.com/document/d/1U0NMxt4eFm__sdlOe6_9aS-SN91IZSTx1qpakbBXsq8/edit?usp=sharing"],
+          ["запись видео","http://www.screencast-o-matic.com/screen_recorder" ],
+          ["v1","http://www.screencast-o-matic.com/screen_recorder_v1" ] ]  
+
   function reset_files() {
         scalars.file = "";
         trimesh.file = "";
@@ -49,9 +53,6 @@ ShowPoints {
       value: initDatasetNumber
     }
 
-    Links {
-      values: [ ["справка dropbox","https://docs.google.com/document/d/1U0NMxt4eFm__sdlOe6_9aS-SN91IZSTx1qpakbBXsq8/edit?usp=sharing"] ]
-    }
   }
 
   property var presetDataDir: Qt.resolvedUrl( combofiles.values[ combofiles.value ] )
