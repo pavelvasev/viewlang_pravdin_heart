@@ -17,8 +17,8 @@ ShowPoints {
   property var currentScalarValue: scalars.current ? scalars.current[ sel.currentIndex ] : undefined
 
   help: [ ["справка dropbox","https://docs.google.com/document/d/1U0NMxt4eFm__sdlOe6_9aS-SN91IZSTx1qpakbBXsq8/edit?usp=sharing"],
-          ["запись видео","http://www.screencast-o-matic.com/screen_recorder" ],
-          ["v1","http://www.screencast-o-matic.com/screen_recorder_v1" ] ]  
+          ["запись видео","https://docs.google.com/document/d/1JrW6N0aYd5p9DTGkChp4U0f1H7rr8j2Eor0DttTSrn4/edit?usp=sharing" ] 
+        ]
 
   function reset_files() {
         scalars.file = "";
