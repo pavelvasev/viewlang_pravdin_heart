@@ -10,7 +10,7 @@ ShowPoints {
   
   // см readme_dataset.md
   property var datasets: ["","data","data1-simmetric","data2-non-simm","https://dl.dropboxusercontent.com/u/523104/data1-simmetric-fun","https://dl.dropboxusercontent.com/u/523104/heart/nosimm-2015-07-17"]
-  property var initDatasetNumber: 1
+  property var initDatasetNumber: 2
   
   points.colors: scalars.output
 
