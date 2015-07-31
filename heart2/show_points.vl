@@ -30,12 +30,15 @@ Scene {
     radius: prParam.value / 10.0
     visible: radius > 0 && opacity > 0
     
+
     property var q: {
       if (!inf.file) {
         positions = [];
         return;
       }
-      loadFile( (inf.file), function(res) {
+      if (thepoints.xhr) thepoints.xhr.abort();
+
+      thepoints.xhr = loadFile( (inf.file), function(res) {
       var lines = res.split("\n");  
       var arr = [];
       for (var i=1; i<lines.length; i++) {
@@ -49,7 +52,10 @@ Scene {
         }
       }
       positions = arr;
-    });    
+      thepoints.xhr = null;
+    }, function (err) {
+      thepoints.xhr = null;
+    });
     }
   }
 }

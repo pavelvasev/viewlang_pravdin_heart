@@ -2,15 +2,17 @@ import "."
 //import "../../vl_scatter" 1.0	
 import "https://github.com/pavelvasev/vl_scatter" 1.0	
 import github.pavelvasev.vl_scatter
+import "external_data"
 
 ShowPoints {
   id: scen
 
   text: "Визуализация фазовых переменных"
+
+  property var initDataUrl: "data"
   
   // см readme_dataset.md
   property var datasets: ["","data","data1-simmetric","data2-non-simm","https://dl.dropboxusercontent.com/u/523104/data1-simmetric-fun","https://dl.dropboxusercontent.com/u/523104/heart/nosimm-2015-07-17"]
-  property var initDatasetNumber: 2
   
   points.colors: scalars.output
 
@@ -38,7 +40,8 @@ ShowPoints {
         combofiles.value=0;
       }
     }
-
+    
+    /*
     Text {
       y: 3
       text: "Набор данных"
@@ -52,10 +55,12 @@ ShowPoints {
       aslider.visible: false
       value: initDatasetNumber
     }
+    */
 
   }
 
-  property var presetDataDir: Qt.resolvedUrl( combofiles.values[ combofiles.value ] )
+  property var presetDataDir: edata.resolvedPath // ключевая переменная
+  //: Qt.resolvedUrl( combofiles.values[ combofiles.value ] )
   onPresetDataDirChanged: {
         console.log("called load with presetDataDir=",presetDataDir);
         if (!presetDataDir || presetDataDir.length == 0) return;
@@ -65,6 +70,15 @@ ShowPoints {
         trimesh.file = presetDataDir + "/triangles.txt";
         tips.file = presetDataDir + "/tipsHans.info";
   }
+  
+  ExternalData {
+    id: edata
+    datasets: scen.datasets
+    resolvedPath: Qt.resolvedUrl(edata.path)
+    width: 500
+    path: scen.initDataUrl
+  }
+  
   
   JsonScalars {
     id: scalars
