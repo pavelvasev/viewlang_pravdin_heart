@@ -41,6 +41,7 @@ Column {
             guid: "data_server_addr"
             tag: undefined
             fastUpdate: true
+            onAccepted: umt.perform();
         }
         
         Button {
