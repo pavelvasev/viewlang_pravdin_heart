@@ -1,0 +1,4 @@
+gem install sinatra --user-install --no-ri --no-rdoc
+gem install json --user-install --no-ri --no-rdoc
+gem install thin --user-install --no-ri --no-rdoc
+gem install sinatra-contrib --user-install --no-ri --no-rdoc
