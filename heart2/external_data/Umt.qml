@@ -14,32 +14,35 @@ Column {
         umt.asking = true;
         console.log( "asking umt server...");
 
-        loadFile( addr.text + "/" + mymethod, function(data) {
+        loadFile( addr.value + "/" + mymethod, function(data) {
             umt.asking = false;
             console.log("got server data=",data)
             output = parseJson( data );
             console.log("output=",output);
             combo.model = output[1];
-
+            
         },
         function (err) {
             console.log("umt ajax error");
             umt.asking = false;
             combo.model = ["не удалось наладить связь с машиной"];
         }
-
+        
         );
     }
     
 
     Row {
         spacing: 10
-        TextField {
-            text: "http://umt.imm.uran.ru:7000"
+        TextParam {
+            value: "http://umt.imm.uran.ru:7000"
             width: maxw
             id: addr
+            guid: "data_server_addr"
+            tag: undefined
+            fastUpdate: true
         }
-
+        
         Button {
             id: btn
             text: "Опросить"
@@ -97,7 +100,7 @@ Column {
         Button {
             text: "Загрузить выбор"
             width: 150
-            onClicked: extdata.path = addr.text + "/" + combo.model[ combo.currentIndex ];
+            onClicked: extdata.path = addr.value + "/" + combo.model[ combo.currentIndex ];
         }
     }
 
