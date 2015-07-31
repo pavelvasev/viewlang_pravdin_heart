@@ -27,9 +27,10 @@ SimpleDialog {
     onAfterOpen: umt.perform();
     
     TabView {
+        id: tabs
 
         Tab {
-            title: "Суперкомьютер"
+            title: "Суперкомпьютер"
             Umt {
                 id: umt
                 maxh: extdata.height-100
@@ -49,13 +50,15 @@ SimpleDialog {
                 maxw: extdata.width-200
             }
         }
+
     }
-
+    
     onResolvedPathChanged: txt.text = extdata.resolvedPath;
-
-
+    
+    
     TextField {
       y: extdata.height-50
+      x: 2
       id: txt
       width: extdata.width-200
       onAccepted: extdata.path = txt.text

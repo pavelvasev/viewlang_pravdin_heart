@@ -1,3 +1,5 @@
+# https://github.com/pavelvasev/viewlang_pravdin_heart/tree/master/server
+
 require 'rubygems'
 require 'sinatra/base' # see http://www.sinatrarb.com/intro
 require 'sinatra/contrib/all' # see https://github.com/sinatra/sinatra-contrib/

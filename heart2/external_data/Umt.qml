@@ -57,25 +57,25 @@ Column {
         Text {
             text: umt.asking ? "опрашиваю машину..." : ("машина опрошена " + formatDateHuman())
 
-        function formatDateHuman(d) {
-          if (!d) d = new Date();
-          function pad(num) {
-            var s = "000000000" + num;
-            return s.substr(s.length-2);
-          }
-          var f = pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds()) + " " + pad(d.getDate()) + "/" + pad(1+d.getMonth()) + "/" + d.getFullYear() ;
-          return f;
-        }
+            function formatDateHuman(d) {
+                if (!d) d = new Date();
+                function pad(num) {
+                    var s = "000000000" + num;
+                    return s.substr(s.length-2);
+                }
+                var f = pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds()) + " " + pad(d.getDate()) + "/" + pad(1+d.getMonth()) + "/" + d.getFullYear() ;
+                return f;
+            }
 
-        function formatDateBack(d) {
-          if (!d) d = new Date();
-          function pad(num) {
-            var s = "000000000" + num;
-            return s.substr(s.length-2);
-          }
-          var f = d.getFullYear() + "" + pad(1+d.getMonth()) + "" + pad(d.getDate()) + "-" + pad(d.getHours()) + "" + pad(d.getMinutes()) + "-" + pad(d.getSeconds());
-          return f;
-        }        
+            function formatDateBack(d) {
+                if (!d) d = new Date();
+                function pad(num) {
+                    var s = "000000000" + num;
+                    return s.substr(s.length-2);
+                }
+                var f = d.getFullYear() + "" + pad(1+d.getMonth()) + "" + pad(d.getDate()) + "-" + pad(d.getHours()) + "" + pad(d.getMinutes()) + "-" + pad(d.getSeconds());
+                return f;
+            }
         }
         
         ProgressBar {
@@ -101,4 +101,5 @@ Column {
         }
     }
 
+    
 } // latest column
