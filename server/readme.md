@@ -23,6 +23,13 @@ gem install thin --user-install --no-ri --no-rdoc
 gem install sinatra-contrib --user-install --no-ri --no-rdoc
 ```
 
+## Имена файлов с данными
+
+Файл с координатами вершин coord.txt
+Файл с триангуляцией поверхности ЛЖ triangles.txt
+Файл с данными в узлах voltage_.json (пока загружаю только занные о потенциале - вольтаж)
+Файл с филаментами tipsHans.info
+
 ## Временный запуск
 Команда запуска:
 ```
