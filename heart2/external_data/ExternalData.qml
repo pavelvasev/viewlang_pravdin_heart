@@ -24,10 +24,12 @@ SimpleDialog {
     
     title: "Укажите источник"
 
-    onAfterOpen: umt.perform();
+    // onAfterOpen: umt.perform();
     
     TabView {
         id: tabs
+        currentIndex: 1
+        width: parent.width
 
         Tab {
             title: "Суперкомпьютер"
