@@ -62,7 +62,7 @@ SimpleDialog {
       y: extdata.height-50
       x: 2
       id: txt
-      width: extdata.width-200
+      width: extdata.width-20
       onAccepted: extdata.path = txt.text
     }
 

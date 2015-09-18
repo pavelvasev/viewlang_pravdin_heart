@@ -2,6 +2,7 @@ import "."
 
 // Выбор чего угодно двойным кликом мышки
 Item {
+  id: item
   property var source: parent
   property var currentIndex: -1
   property var currentPos: null
@@ -19,12 +20,21 @@ Item {
   }
 */  
 
-  function doIntersect() {
+  function doIntersect( setCenter ) {
       var r = source.intersect( sceneMouse );
       //console.log(r);
       if (r) {
         currentIndex = r.index;
         currentPos = [ r.point.x, r.point.y, r.point.z ];
+        // выставляем центр поворота камеры
+        
+        /* это отстой. лучше сделаем по отдельной кнопке
+        if (setCenter) {
+          var rootScene = findRootScene(this);
+          console.log( "rootScene=",rootScene);
+          if (rootScene) rootScene.cameraCenter = currentPos;
+        }
+        */
       }
       else
       {
@@ -34,8 +44,8 @@ Item {
   }
 
   SceneMouseEvents {
-    onDoubleClicked: if (mode == 1 || (mode == 2 && event.ctrlKey)) doIntersect();
-    onPositionChanged: if ((mode == 1 && event.altKey) || (mode == 2 && event.ctrlKey)) doIntersect();
+    onDoubleClicked: if (mode == 1 || (mode == 2 && event.ctrlKey)) doIntersect(event.ctrlKey);
+    onPositionChanged: if ((mode == 1 && event.altKey) || (mode == 2 && event.ctrlKey)) doIntersect(event.ctrlKey);
   }
   
   Text {
@@ -44,6 +54,16 @@ Item {
     text: (mode == 1 ? "Двойной клик на сцене или движение с нажатым Alt" : "Движение мышки с нажатым Ctrl") + " - выбор. Сейчас выбрано: N"+ (currentIndex+1)
     property var tag: "top"
   }
-
+ 
+  Component.onCompleted: {
+    document.addEventListener('keydown', function(e) {
+       // e.ctrlKey && 
+       if ( ( String.fromCharCode(e.which) === 'c' || String.fromCharCode(e.which) === 'C' ) ) {
+          var rootScene = findRootScene(item);
+          if (rootScene && currentPos) rootScene.cameraCenter = currentPos;
+       }
+    }, false);
   
+  }
+
 }
