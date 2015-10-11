@@ -5,13 +5,11 @@ import "https://github.com/pavelvasev/vl_scatter" 1.0
 Scene {
   id: s
   
-  text: "Сцена"
+  text: tetrascene.text
 
-  //centerPoint: [-0.9849010122148609, -2.2283103232173183, 47.10249136613619] // [1.52, 1.11, 10.49]
-  Text {
-    text: "Для тетраэдров tetr*.dat,\nдля вершин versh*.dat"
-    property var tag: "right"
-  }
+  center: [-0.9849010122148609, -2.2283103232173183, 47.10249136613619] // [1.52, 1.11, 10.49]
+  cameraPos: [3, -122, 137 ]  
+
   
   property var samplGraphs: [Qt.resolvedUrl( "mech-04-2015/tetr10000.dat"),Qt.resolvedUrl( "mech-04-2015/tetr20000.dat"),Qt.resolvedUrl( "mech-04-2015/tetr30000.dat")];
   property var samplGeo: Qt.resolvedUrl( "mech-04-2015/231.geo" );
@@ -23,9 +21,12 @@ Scene {
     onClicked: {
       graphFiles.files = samplGraphs;
       tetrascene.file = samplGeo;
-      //tetrascene.file = Qt.resolvedUrl( "mech-04-2015/0.geo" );
-      //tetrascene.file = Qt.resolvedUrl( "mech-04-2015/231.geo" );
     }
+  }
+
+  Text {
+    text: "Для тетраэдров tetr*.dat,\nдля вершин versh*.dat"
+    property var tag: "right"
   }
   
   FileParam {
@@ -88,6 +89,7 @@ Scene {
   
   MultiScatterPlot {
     fileParam.text: "Отображаемый график"
+    fileParam.showChosenFile: true
 //    visible: sph > 0
 
     y: parent.bottom - sph -10

@@ -6,28 +6,18 @@ Tetras {
 
   positions: []
   
-  Text {
-    text: "Подсветить тетраэдры NN"
-    property var tag: "left"
-  }
-
   property var hiliteTetras: []
-
-  onHiliteTetrasChanged: hiliteTetrasEdit.text = hiliteTetras.join(" ")
+  onHiliteTetrasChanged: hiliteTetrasParam.value = hiliteTetras.join(" ")
   
-  Row {
-    property var tag: "left"
-    TextInput {
-      width: 150
-      id: hiliteTetrasEdit
-    }
-    Button {
-      text: "Ввод"
-      onClicked: {
-        hiliteTetras = hiliteTetrasEdit.text.split(/\s+/).map( function(f) { return parseInt(f) } );
-        perform();
-      }
-    }
+  TextParam {
+     id: hiliteTetrasParam
+     guid: "hilite-tetras"
+     text: "Подсветить тетраэдры NN\n(укажите номера через пробел)"
+     onValueChanged: {
+       console.log("val changed!");
+       hiliteTetras = value.split(/\s+/).map( function(f) { return parseInt(f) } );
+       perform();
+     }
   }
 
   function perform() {

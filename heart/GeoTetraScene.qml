@@ -5,7 +5,7 @@ import QtQuick.Controls 1.0
 Scene  {
     info: "Отображение тетраэдральной сетки сердечного желудочка. Укажите файл в формате GEO.<br>
          Двойной клик на изображении - выбрать тетраэдр.
-  "
+    "
  
     id: theScene
 
@@ -168,6 +168,7 @@ Scene  {
       source: tetrar
       onSelectedChanged: selectedPoint = selected;
     }
+
     TetraMouseChooser {
       enabled: false
       id: selPointMouse
@@ -176,6 +177,5 @@ Scene  {
         selectedPoint = (selected === null ? -1 : vershinas.originalPointNumbers[ selected ])
       }
     }
-    
       
 }
