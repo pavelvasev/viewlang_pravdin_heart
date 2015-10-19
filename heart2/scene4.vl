@@ -30,11 +30,12 @@ ShowPoints {
         scen.file = "";
   }
 
+
   Row {
     property var tag: "top"
     spacing: 5
     Button {
-      text: "Очистить файлы"
+      text: scen.userLangRu ? "Очистить данные" : "Reset"
       width: 160
       onClicked: {
         reset_files();

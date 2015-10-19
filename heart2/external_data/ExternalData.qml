@@ -11,7 +11,7 @@ SimpleDialog {
 
     Button {
         property var tag: "top"
-        text: "Загрузка данных.."
+        text: scen.userLangRu ? "Загрузка данных.." : "Load data.."
         width: 150
         onClicked: extdata.open();
     }
