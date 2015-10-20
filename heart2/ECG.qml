@@ -1,5 +1,9 @@
 ScatterPlot {
   anchors.fill:parent
+  z: 20
+  //color: [1,0,1]
+
+  independentFromTree: true
   
   FileParam {
     id: fs
