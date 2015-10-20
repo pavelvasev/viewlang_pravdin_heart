@@ -133,6 +133,8 @@ ShowPoints {
       grafik.selectedParam.value = idx+1;
     }
 
+    ECG { }
+
     anchors.fill: parent
     timeout: 1
     controlsTag: "rightbottom"
