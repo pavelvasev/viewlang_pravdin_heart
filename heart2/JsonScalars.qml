@@ -49,8 +49,9 @@ Item {
   }
 
   MinMax {
-    source: scalars
+    input: scalars
     id: minmaxer
+    
   }
 
 }
