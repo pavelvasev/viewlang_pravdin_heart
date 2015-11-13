@@ -126,6 +126,12 @@ ShowPoints {
     property var tag: "top"
   }
 
+  Text {
+    y:3
+    text: sel.currentPos ? "Координаты=" + sel.currentPos[0].toFixed(5) + " " + sel.currentPos[1].toFixed(5) + " " + sel.currentPos[2].toFixed(5): ""
+    property var tag: "top"
+  }  
+
   GrPos {
   MultiScatterPlotWithPoi {
     property var idx: sel.currentIndex

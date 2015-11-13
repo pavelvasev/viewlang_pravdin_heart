@@ -26,7 +26,9 @@ Item {
       if (r) {
         currentIndex = r.index;
         currentPos = [ r.point.x, r.point.y, r.point.z ];
+        console.log( "click on point index",currentIndex," pos",currentPos );
         // выставляем центр поворота камеры
+        
         
         /* это отстой. лучше сделаем по отдельной кнопке
         if (setCenter) {
