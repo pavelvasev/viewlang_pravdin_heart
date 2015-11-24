@@ -133,7 +133,7 @@ ShowPoints {
   }  
 
   GrPos {
-  MultiScatterPlotWithPoi {
+    MultiScatterPlotWithPoi {
     property var idx: sel.currentIndex
     onIdxChanged: {
       grafik.selectedParam.value = idx+1;

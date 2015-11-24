@@ -47,7 +47,9 @@ Item {
 
   SceneMouseEvents {
     onDoubleClicked: if (mode == 1 || (mode == 2 && event.ctrlKey)) doIntersect(event.ctrlKey);
-    onPositionChanged: if ((mode == 1 && event.altKey) || (mode == 2 && event.ctrlKey)) doIntersect(event.ctrlKey);
+    onPositionChanged: { 
+     if ((mode == 1 && event.altKey) || (mode == 2 && event.ctrlKey)) doIntersect(event.ctrlKey);
+     }
   }
   
   Text {
@@ -57,15 +59,6 @@ Item {
     property var tag: "top"
   }
  
-  Component.onCompleted: {
-    document.addEventListener('keydown', function(e) {
-       // e.ctrlKey && 
-       if ( ( String.fromCharCode(e.which) === 'c' || String.fromCharCode(e.which) === 'C' ) ) {
-          var rootScene = findRootScene(item);
-          if (rootScene && currentPos) rootScene.cameraCenter = currentPos;
-       }
-    }, false);
-  
-  }
+  CenterCameraOnKeyC { }
 
 }
