@@ -3,6 +3,8 @@ ScatterPlot {
   z: 20
   //color: [1,0,1]
 
+  ScatterSolidLine { }
+
   independentFromTree: true
   
   FileParam {
