@@ -7,6 +7,8 @@ ScatterPlot {
 
   independentFromTree: true
   
+  property alias ecgFile: fs.file
+
   FileParam {
     id: fs
     text: "Файл ЭКГ *.dat"

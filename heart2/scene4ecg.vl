@@ -1,0 +1,11 @@
+import "."
+//import "../../vl_scatter" 1.0	
+//import "https://github.com/pavelvasev/vl_scatter" 1.0	
+import components.scatter
+import "external_data"
+
+Scene {
+  GrPos {
+  ECGUMT {}
+  }
+}

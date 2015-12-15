@@ -139,7 +139,7 @@ ShowPoints {
       grafik.selectedParam.value = idx+1;
     }
 
-    ECG { }
+    ECGUMT { }
 
     anchors.fill: parent
     timeout: 1
