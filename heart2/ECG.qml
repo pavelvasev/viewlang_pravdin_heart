@@ -7,8 +7,12 @@ ScatterPlot {
 
   independentFromTree: true
   
-  property alias ecgFile: fs.file
+  property alias file: fs.file
+  property alias fileParam: fs
 
+  color: [0.7,0,0.7] // purple
+  //color: [0.9,0.9,0] //yellow
+  
   FileParam {
     id: fs
     text: "Файл ЭКГ *.dat"

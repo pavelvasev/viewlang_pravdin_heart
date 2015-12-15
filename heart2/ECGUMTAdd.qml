@@ -1,22 +1,14 @@
-import "."
-//import "../../vl_scatter" 1.0	
-//import "https://github.com/pavelvasev/vl_scatter" 1.0	
-import components.scatter
-import "external_data"
-
-Scene {
-  id: scen
-  GrPos {
+Item {
+  anchors.fill: parent
   CheckBoxParam {
     text: "Добавить ЭКГ"
     width: 150
     id: cbekg
-
+    tag: "right"
   }
   Loader {
     source: Qt.resolvedUrl("ECGUMT.qml")
     active: cbekg.checked
     onLoaded: scen.findRootSpace().refineAll()
   }
-  }
-}
+}  
