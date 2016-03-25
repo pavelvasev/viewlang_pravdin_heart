@@ -4,7 +4,7 @@ import "."
 import components.scatter
 import "external_data"
 
-ShowPoints {
+ShowPointsH {
   id: scen
 
   text: "Визуализация фазовых переменных"

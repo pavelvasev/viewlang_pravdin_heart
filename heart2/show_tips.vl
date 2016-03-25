@@ -59,7 +59,7 @@ Scene {
         //radius: 0.5
         color: [0.1,0.1,0.1]
         ctag: "right"
-        mode: 1
+        mode: 2
         text: "Типсы"
       }
       
